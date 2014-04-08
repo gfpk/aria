@@ -3,3 +3,531 @@
 Started GET "/assets/rails.png" for 127.0.0.1 at 2014-04-08 14:56:08 +0100
 Connecting to database specified by database.yml
 Served asset /rails.png - 200 OK (3ms)
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2014-04-08 14:59:05 +0100
+Served asset /rails.png - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2014-04-08 16:58:12 +0100
+Served asset /rails.png - 304 Not Modified (1ms)
+
+
+Started GET "/programs" for 127.0.0.1 at 2014-04-08 16:58:19 +0100
+Processing by ProgramsController#index as HTML
+Completed 500 Internal Server Error in 65.2ms
+
+ActiveRecord::StatementInvalid - Could not find table 'programs':
+  activerecord (3.2.15) lib/active_record/connection_adapters/sqlite_adapter.rb:472:in `table_structure'
+  activerecord (3.2.15) lib/active_record/connection_adapters/sqlite_adapter.rb:346:in `columns'
+  activerecord (3.2.15) lib/active_record/connection_adapters/schema_cache.rb:12:in `block in initialize'
+  activerecord (3.2.15) lib/active_record/model_schema.rb:229:in `yield'
+  activerecord (3.2.15) lib/active_record/model_schema.rb:229:in `default'
+  activerecord (3.2.15) lib/active_record/model_schema.rb:229:in `columns'
+  activerecord (3.2.15) lib/active_record/model_schema.rb:238:in `columns_hash'
+  activerecord (3.2.15) lib/active_record/locking/optimistic.rb:131:in `locking_enabled?'
+  activerecord (3.2.15) lib/active_record/relation.rb:170:in `exec_queries'
+  activerecord (3.2.15) lib/active_record/relation.rb:160:in `block in to_a'
+  activerecord (3.2.15) lib/active_record/explain.rb:34:in `logging_query_plan'
+  activerecord (3.2.15) lib/active_record/relation.rb:159:in `to_a'
+  activerecord (3.2.15) lib/active_record/relation/finder_methods.rb:159:in `all'
+  activerecord (3.2.15) lib/active_record/querying.rb:5:in `all'
+  app/controllers/programs_controller.rb:5:in `index'
+  actionpack (3.2.15) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (3.2.15) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.15) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.15) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.15) lib/active_support/callbacks.rb:414:in `_run__251898368__process_action__572598101__callbacks'
+  activesupport (3.2.15) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.15) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.15) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.15) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.15) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.15) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.15) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.15) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.15) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.15) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.15) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.15) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.15) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.15) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.15) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.15) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.15) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.15) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (3.2.15) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.15) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.15) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.15) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.15) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.15) lib/active_support/callbacks.rb:405:in `_run__590008445__call__777512903__callbacks'
+  activesupport (3.2.15) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.15) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.15) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.15) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  better_errors (1.0.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (1.0.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (1.0.1) lib/better_errors/middleware.rb:56:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.15) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.15) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.15) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.15) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.15) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.15) lib/rails/engine.rb:484:in `call'
+  railties (3.2.15) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.15) lib/rails/rack/log_tailer.rb:17:in `call'
+  thin (1.6.1) lib/thin/connection.rb:82:in `block in pre_process'
+  thin (1.6.1) lib/thin/connection.rb:80:in `catch'
+  thin (1.6.1) lib/thin/connection.rb:80:in `pre_process'
+  thin (1.6.1) lib/thin/connection.rb:55:in `process'
+  thin (1.6.1) lib/thin/connection.rb:41:in `receive_data'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run'
+  thin (1.6.1) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.1) lib/thin/server.rb:162:in `start'
+  rack (1.4.5) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.5) lib/rack/server.rb:268:in `start'
+  railties (3.2.15) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.15) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.15) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.15) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+
+Started POST "/__better_errors/84762410/variables" for 127.0.0.1 at 2014-04-08 16:58:19 +0100
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (65.6ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (14.9ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (2.8ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Migrating to CreatePrograms (20140408155757)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "programs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "string" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20140408155757')[0m
+  [1m[35m (20.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+
+
+Started GET "/programs" for 127.0.0.1 at 2014-04-08 16:58:41 +0100
+Processing by ProgramsController#index as HTML
+  [1m[36mProgram Load (0.2ms)[0m  [1mSELECT "programs".* FROM "programs" [0m
+  Rendered programs/index.html.erb within layouts/application (11.7ms)
+Compiled jquery.ui.core.css  (1ms)  (pid 6104)
+Compiled jquery.ui.theme.css  (8ms)  (pid 6104)
+Compiled jquery.ui.datepicker.css  (45ms)  (pid 6104)
+Compiled bootstrap.min.css  (0ms)  (pid 6104)
+Warning. Error encountered while saving cache /home/nci/aria/tmp/cache/sass/a68df58b8cee9dc8c71bb6a6ee1782ea17bdf3fd/carts.css.scssc: can't dump anonymous class #<Class:0x9385578>
+Compiled carts.css  (35ms)  (pid 6104)
+Compiled flexslider.css  (0ms)  (pid 6104)
+Warning. Error encountered while saving cache /home/nci/aria/tmp/cache/sass/a68df58b8cee9dc8c71bb6a6ee1782ea17bdf3fd/line_items.css.scssc: can't dump anonymous class #<Class:0x9385578>
+Compiled line_items.css  (1ms)  (pid 6104)
+Warning. Error encountered while saving cache /home/nci/aria/tmp/cache/sass/a68df58b8cee9dc8c71bb6a6ee1782ea17bdf3fd/orders.css.scssc: can't dump anonymous class #<Class:0x9385578>
+Compiled orders.css  (1ms)  (pid 6104)
+Warning. Error encountered while saving cache /home/nci/aria/tmp/cache/sass/a68df58b8cee9dc8c71bb6a6ee1782ea17bdf3fd/programs.css.scssc: can't dump anonymous class #<Class:0x9385578>
+Compiled programs.css  (1ms)  (pid 6104)
+Warning. Error encountered while saving cache /home/nci/aria/tmp/cache/sass/a68df58b8cee9dc8c71bb6a6ee1782ea17bdf3fd/scaffolds.css.scssc: can't dump anonymous class #<Class:0x9385578>
+Compiled scaffolds.css  (9ms)  (pid 6104)
+Warning. Error encountered while saving cache /home/nci/aria/tmp/cache/sass/a68df58b8cee9dc8c71bb6a6ee1782ea17bdf3fd/showitems.css.scssc: can't dump anonymous class #<Class:0x9385578>
+Compiled showitems.css  (1ms)  (pid 6104)
+Warning. Error encountered while saving cache /home/nci/aria/tmp/cache/sass/a68df58b8cee9dc8c71bb6a6ee1782ea17bdf3fd/showtimes.css.scssc: can't dump anonymous class #<Class:0x9385578>
+Compiled showtimes.css  (1ms)  (pid 6104)
+Warning. Error encountered while saving cache /home/nci/aria/tmp/cache/sass/a68df58b8cee9dc8c71bb6a6ee1782ea17bdf3fd/tickets.css.scssc: can't dump anonymous class #<Class:0x9385578>
+Compiled tickets.css  (1ms)  (pid 6104)
+Compiled z-style.css  (0ms)  (pid 6104)
+Compiled application.css  (188ms)  (pid 6104)
+Compiled angular.js  (10ms)  (pid 6104)
+Compiled jquery.js  (1ms)  (pid 6104)
+Compiled jquery_ujs.js  (0ms)  (pid 6104)
+Compiled jquery.ui.core.js  (0ms)  (pid 6104)
+Compiled jquery.ui.datepicker.js  (13ms)  (pid 6104)
+Compiled ang.js  (0ms)  (pid 6104)
+Compiled bootstrap.min.js  (0ms)  (pid 6104)
+Compiled carts.js  (320ms)  (pid 6104)
+Compiled jquery.flexslider.js  (0ms)  (pid 6104)
+Compiled line_items.js  (116ms)  (pid 6104)
+Compiled orders.js  (118ms)  (pid 6104)
+Compiled programs.js  (116ms)  (pid 6104)
+Compiled showitems.js  (132ms)  (pid 6104)
+Compiled showtimes.js  (114ms)  (pid 6104)
+Compiled tickets.js  (119ms)  (pid 6104)
+Compiled application.js  (1242ms)  (pid 6104)
+Completed 200 OK in 1583.5ms (Views: 1580.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-08 16:58:43 +0100
+Served asset /application.css - 200 OK (30ms)
+
+
+Started GET "/assets/flexslider.css?body=1" for 127.0.0.1 at 2014-04-08 16:58:43 +0100
+Served asset /flexslider.css - 200 OK (1ms)
+
+
+Started GET "/assets/jquery.ui.core.css?body=1" for 127.0.0.1 at 2014-04-08 16:58:43 +0100
+Served asset /jquery.ui.core.css - 200 OK (2ms)
+
+
+Started GET "/assets/jquery.ui.theme.css?body=1" for 127.0.0.1 at 2014-04-08 16:58:43 +0100
+Served asset /jquery.ui.theme.css - 200 OK (3ms)
+
+
+Started GET "/assets/jquery.ui.datepicker.css?body=1" for 127.0.0.1 at 2014-04-08 16:58:43 +0100
+Served asset /jquery.ui.datepicker.css - 200 OK (3ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-04-08 16:58:43 +0100
+Served asset /bootstrap.min.css - 200 OK (1ms)
+
+
+Started GET "/assets/carts.css?body=1" for 127.0.0.1 at 2014-04-08 16:58:43 +0100
+Served asset /carts.css - 200 OK (1ms)
+
+
+Started GET "/assets/line_items.css?body=1" for 127.0.0.1 at 2014-04-08 16:58:43 +0100
+Served asset /line_items.css - 200 OK (1ms)
+
+
+Started GET "/assets/orders.css?body=1" for 127.0.0.1 at 2014-04-08 16:58:43 +0100
+Served asset /orders.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/programs.css?body=1" for 127.0.0.1 at 2014-04-08 16:58:43 +0100
+Served asset /programs.css - 200 OK (10ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-04-08 16:58:43 +0100
+Served asset /scaffolds.css - 200 OK (5ms)
+
+
+Started GET "/assets/showitems.css?body=1" for 127.0.0.1 at 2014-04-08 16:58:43 +0100
+Served asset /showitems.css - 200 OK (1ms)
+
+
+Started GET "/assets/showtimes.css?body=1" for 127.0.0.1 at 2014-04-08 16:58:43 +0100
+Served asset /showtimes.css - 200 OK (1ms)
+
+
+Started GET "/assets/tickets.css?body=1" for 127.0.0.1 at 2014-04-08 16:58:43 +0100
+Served asset /tickets.css - 200 OK (1ms)
+
+
+Started GET "/assets/angular.js?body=1" for 127.0.0.1 at 2014-04-08 16:58:43 +0100
+Served asset /angular.js - 200 OK (36ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-08 16:58:43 +0100
+Served asset /jquery.js - 200 OK (4ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-08 16:58:43 +0100
+Served asset /jquery_ujs.js - 200 OK (3ms)
+
+
+Started GET "/assets/jquery.ui.core.js?body=1" for 127.0.0.1 at 2014-04-08 16:58:43 +0100
+Served asset /jquery.ui.core.js - 200 OK (2ms)
+
+
+Started GET "/assets/z-style.css?body=1" for 127.0.0.1 at 2014-04-08 16:58:43 +0100
+Served asset /z-style.css - 200 OK (7ms)
+
+
+Started GET "/assets/jquery.ui.datepicker.js?body=1" for 127.0.0.1 at 2014-04-08 16:58:43 +0100
+Served asset /jquery.ui.datepicker.js - 200 OK (7ms)
+
+
+Started GET "/assets/ang.js?body=1" for 127.0.0.1 at 2014-04-08 16:58:43 +0100
+Served asset /ang.js - 200 OK (1ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-04-08 16:58:43 +0100
+Served asset /bootstrap.min.js - 200 OK (2ms)
+
+
+Started GET "/assets/carts.js?body=1" for 127.0.0.1 at 2014-04-08 16:58:43 +0100
+Served asset /carts.js - 200 OK (1ms)
+
+
+Started GET "/assets/jquery.flexslider.js?body=1" for 127.0.0.1 at 2014-04-08 16:58:43 +0100
+Served asset /jquery.flexslider.js - 200 OK (1ms)
+
+
+Started GET "/assets/line_items.js?body=1" for 127.0.0.1 at 2014-04-08 16:58:43 +0100
+Served asset /line_items.js - 200 OK (2ms)
+
+
+Started GET "/assets/orders.js?body=1" for 127.0.0.1 at 2014-04-08 16:58:43 +0100
+Served asset /orders.js - 200 OK (1ms)
+
+
+Started GET "/assets/showitems.js?body=1" for 127.0.0.1 at 2014-04-08 16:58:43 +0100
+Served asset /showitems.js - 200 OK (1ms)
+
+
+Started GET "/assets/programs.js?body=1" for 127.0.0.1 at 2014-04-08 16:58:43 +0100
+Served asset /programs.js - 200 OK (5ms)
+
+
+Started GET "/assets/showtimes.js?body=1" for 127.0.0.1 at 2014-04-08 16:58:43 +0100
+Served asset /showtimes.js - 200 OK (1ms)
+
+
+Started GET "/assets/tickets.js?body=1" for 127.0.0.1 at 2014-04-08 16:58:43 +0100
+Served asset /tickets.js - 200 OK (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-08 16:58:43 +0100
+Served asset /application.js - 200 OK (46ms)
+
+
+Started GET "/showtimes" for 127.0.0.1 at 2014-04-08 16:58:43 +0100
+
+ActionController::RoutingError (No route matches [GET] "/showtimes"):
+  actionpack (3.2.15) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.15) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.15) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.15) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.15) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.15) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.15) lib/rails/engine.rb:484:in `call'
+  railties (3.2.15) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.15) lib/rails/rack/log_tailer.rb:17:in `call'
+  thin (1.6.1) lib/thin/connection.rb:82:in `block in pre_process'
+  thin (1.6.1) lib/thin/connection.rb:80:in `catch'
+  thin (1.6.1) lib/thin/connection.rb:80:in `pre_process'
+  thin (1.6.1) lib/thin/connection.rb:55:in `process'
+  thin (1.6.1) lib/thin/connection.rb:41:in `receive_data'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run'
+  thin (1.6.1) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.1) lib/thin/server.rb:162:in `start'
+  rack (1.4.5) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.5) lib/rack/server.rb:268:in `start'
+  railties (3.2.15) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.15) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.15) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.15) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+  Rendered /home/nci/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/programs/new" for 127.0.0.1 at 2014-04-08 16:58:47 +0100
+Processing by ProgramsController#new as HTML
+  Rendered programs/_form.html.erb (49.8ms)
+  Rendered programs/new.html.erb within layouts/application (80.8ms)
+Completed 200 OK in 99.0ms (Views: 90.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-08 16:58:47 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.ui.theme.css?body=1" for 127.0.0.1 at 2014-04-08 16:58:47 +0100
+Served asset /jquery.ui.theme.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.ui.core.css?body=1" for 127.0.0.1 at 2014-04-08 16:58:47 +0100
+Served asset /jquery.ui.core.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-04-08 16:58:47 +0100
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.ui.datepicker.css?body=1" for 127.0.0.1 at 2014-04-08 16:58:47 +0100
+Served asset /jquery.ui.datepicker.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/carts.css?body=1" for 127.0.0.1 at 2014-04-08 16:58:47 +0100
+Served asset /carts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flexslider.css?body=1" for 127.0.0.1 at 2014-04-08 16:58:47 +0100
+Served asset /flexslider.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/line_items.css?body=1" for 127.0.0.1 at 2014-04-08 16:58:47 +0100
+Served asset /line_items.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/orders.css?body=1" for 127.0.0.1 at 2014-04-08 16:58:47 +0100
+Served asset /orders.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/programs.css?body=1" for 127.0.0.1 at 2014-04-08 16:58:47 +0100
+Served asset /programs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-04-08 16:58:47 +0100
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/showitems.css?body=1" for 127.0.0.1 at 2014-04-08 16:58:47 +0100
+Served asset /showitems.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/showtimes.css?body=1" for 127.0.0.1 at 2014-04-08 16:58:47 +0100
+Served asset /showtimes.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/tickets.css?body=1" for 127.0.0.1 at 2014-04-08 16:58:47 +0100
+Served asset /tickets.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/z-style.css?body=1" for 127.0.0.1 at 2014-04-08 16:58:47 +0100
+Served asset /z-style.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/angular.js?body=1" for 127.0.0.1 at 2014-04-08 16:58:47 +0100
+Served asset /angular.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-08 16:58:47 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-08 16:58:47 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.ui.core.js?body=1" for 127.0.0.1 at 2014-04-08 16:58:47 +0100
+Served asset /jquery.ui.core.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.ui.datepicker.js?body=1" for 127.0.0.1 at 2014-04-08 16:58:47 +0100
+Served asset /jquery.ui.datepicker.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ang.js?body=1" for 127.0.0.1 at 2014-04-08 16:58:47 +0100
+Served asset /ang.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-04-08 16:58:47 +0100
+Served asset /bootstrap.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/carts.js?body=1" for 127.0.0.1 at 2014-04-08 16:58:47 +0100
+Served asset /carts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.flexslider.js?body=1" for 127.0.0.1 at 2014-04-08 16:58:47 +0100
+Served asset /jquery.flexslider.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/line_items.js?body=1" for 127.0.0.1 at 2014-04-08 16:58:47 +0100
+Served asset /line_items.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/orders.js?body=1" for 127.0.0.1 at 2014-04-08 16:58:47 +0100
+Served asset /orders.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/programs.js?body=1" for 127.0.0.1 at 2014-04-08 16:58:47 +0100
+Served asset /programs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/showitems.js?body=1" for 127.0.0.1 at 2014-04-08 16:58:47 +0100
+Served asset /showitems.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/showtimes.js?body=1" for 127.0.0.1 at 2014-04-08 16:58:47 +0100
+Served asset /showtimes.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tickets.js?body=1" for 127.0.0.1 at 2014-04-08 16:58:47 +0100
+Served asset /tickets.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-08 16:58:47 +0100
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/showtimes" for 127.0.0.1 at 2014-04-08 16:58:47 +0100
+
+ActionController::RoutingError (No route matches [GET] "/showtimes"):
+  actionpack (3.2.15) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.15) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.15) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.15) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.15) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.15) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.15) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.15) lib/rails/engine.rb:484:in `call'
+  railties (3.2.15) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.15) lib/rails/rack/log_tailer.rb:17:in `call'
+  thin (1.6.1) lib/thin/connection.rb:82:in `block in pre_process'
+  thin (1.6.1) lib/thin/connection.rb:80:in `catch'
+  thin (1.6.1) lib/thin/connection.rb:80:in `pre_process'
+  thin (1.6.1) lib/thin/connection.rb:55:in `process'
+  thin (1.6.1) lib/thin/connection.rb:41:in `receive_data'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.3) lib/eventmachine.rb:187:in `run'
+  thin (1.6.1) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.1) lib/thin/server.rb:162:in `start'
+  rack (1.4.5) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.5) lib/rack/server.rb:268:in `start'
+  railties (3.2.15) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.15) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.15) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.15) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+  Rendered /home/nci/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+Connecting to database specified by database.yml
+  [1m[36m (1.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Migrating to CreatePrograms (20140408155757)
+  [1m[36m (0.0ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mDROP TABLE "programs"[0m
+  [1m[35m (0.2ms)[0m  DELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20140408155757'
+  [1m[36m (46.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml

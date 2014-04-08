@@ -21,6 +21,19 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'rmagick'
+gem 'carrierwave'
+gem 'devise'
+gem 'better_errors'
+gem 'cancan'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'thin'
+gem 'jquery-ui-rails'
+gem 'whenever', require: false
+#gem 'mul'
+gem 'angularjs-rails'
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
