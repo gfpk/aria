@@ -2,12 +2,99 @@
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
  *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * Any CSS and SCSS file within this directory, libassets/stylesheets, vendorassets/stylesheets,
  * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
  *
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= require jquery.ui.datepicker
+
  *= require_tree .
  */
+ td.highlight a
+ {background-image: url("/cal-bg.png") !important;
+background-position: top left !important;
+background-repeat: no-repeat !important;}
+td.highlight a.ui-state-active
+{
+    background-color: #B32B0B !important;
+}
+
+#seatingplan {
+    cursor: pointer;
+    transition: all 0.1s ease-out 0s;
+    text-align: center;
+}
+#seatingplan ul {
+    height: 5px;
+    padding: 1px;
+}
+
+#seatingplan li {
+    display: block;
+    float: left;
+    font-size: 14px;
+    margin: 1px;
+}
+#seatingplan li.buffer {
+    color: #990000;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 15px;
+    width: 10px;
+}
+#seatingplan li a {
+    background-color: #EEEEEE;
+    border: 1px solid #BBBBBB;
+    border-radius: 2px 2px 2px 2px;
+    display: block;
+    font-size: 9px;
+    
+    line-height: 15px;
+    text-align: center;
+    transition: all 0.1s ease-out 0s;
+    width: 24px;
+    color:#777;
+}
+
+#seatingplan li a:hover {
+    background: none repeat scroll 0 0 #BBBBBB;
+}
+
+#seatingplan li a[data-avail="false"] {
+    background-color: #777777;
+    background-image: url("/na.png");
+    background-position: 50% 50%;
+    color: #FFFFFF;
+    opacity: 0.8;
+}
+
+#seatingplan li a[data-incart=true] {  
+    background-color: #369;
+    background-image: none;
+    background-position: 50% 50%;
+    border-color:#0B4470;
+    color:#fff;
+}
+#seatingplan li a.na:hover {
+    background-image: url("/na.png");
+    background-position: 50% 50%;
+
+}
+#seatingplan li a.selected {
+    background: none repeat scroll 0 0 #336699;
+    border-color: #336699;
+    color: #FFFFFF;
+}
+#rowA, #rowC, #rowE, #rowH, #rowK, #rowN, #rowQ, #rowS {
+    
+}
+#stage {
+    margin-bottom: 20px;
+    text-align: center;
+}
+.side {
+    position: relative;
+}
