@@ -1,0 +1,32 @@
+
+
+	<div class="container text-center login">
+		<div class="login-inner">
+		<h2>Sign up</h2>
+		<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => 'form-vertical' }) do |f| %>
+		  <%= f.error_notification %>
+		  <%= display_base_errors resource %>
+		  <%= f.input :name,:autofocus => true %>
+		  <%= f.input :email, :required => true %>
+		  <%= f.input :password, :required => true %>
+		  <%= f.input :password_confirmation, :required => true%>
+		  <%= f.button :submit, 'Sign up', :class => 'btn-primary btn-block btn-large' %>
+		<% end %>
+		
+		<p>or connect via</p>
+		<p>
+	<a class="btn btn-primary social-login-btn social-facebook" href="/auth/facebook"><i class="fa fa-facebook"></i></a>
+	<a class="btn btn-primary social-login-btn social-google" href="/auth/google"><i class="fa fa-google-plus"></i></a>
+</p>
+
+		<%= render "devise/shared/links" %>
+
+		</div>
+</div>
+
+
+			
+
+
+
+

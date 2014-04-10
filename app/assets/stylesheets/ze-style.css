@@ -1,0 +1,70 @@
+.navmenu-default, .navbar-default .navbar-offcanvas {
+    background-color: #F8F8F8;
+    border-color: #E7E7E7;
+}
+.navmenu-fixed-left, .navbar-offcanvas.navmenu-fixed-left {
+    border-width: 0 1px 0 0;
+    bottom: 0;
+    left: 0;
+    overflow-y: auto;
+    right: auto;
+}
+.navmenu-fixed-left, .navmenu-fixed-right, .navbar-offcanvas {
+    border-radius: 0;
+    position: fixed;
+    top: 0;
+}
+.navmenu, .navbar-offcanvas {
+    border-style: solid;
+    height: 100%;
+    width: 300px;
+}
+.navmenu-brand {
+    display: block;
+    font-size: 18px;
+    line-height: 20px;
+    margin: 10px 0;
+    padding: 10px 15px;
+}
+.nav > li > a {
+    display: block;
+    padding: 10px 15px;
+    position: relative;
+    color: #777777;
+}
+.navmenu.navmenu-nav > li > a, .navbar .navbar-offcanvas .navmenu-nav > li > a {
+    color: #777777;
+}
+.login
+{
+    background: rgba(255,255,255,0.4);
+    padding: 10px 20px;
+    width: 350px;
+    border-radius: 0 0 4px 4px;
+}
+.login label
+{
+    text-align: left;
+    color: #fff;
+}
+.login p
+{
+    color: #fff;
+}
+.login input[type="text"], .login input[type="email"], .login input[type="password"] {
+    border-radius: 4px 4px 4px 4px;
+    color: #555555;
+    display: block;
+    font-size: 14px;
+    height: 27px;
+    line-height: 20px;
+    margin-bottom: 0;
+    padding: 4px 6px;
+    vertical-align: middle;
+    width: 335px;
+
+}
+.login h2, .login h3
+{
+    color:#fff;
+}
