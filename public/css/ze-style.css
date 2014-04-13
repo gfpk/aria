@@ -1,3 +1,6 @@
+html, body {
+    min-height: 100%;
+}
 .cbp-spmenu {
     background: #47a3da;
     position: fixed;
