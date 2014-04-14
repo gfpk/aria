@@ -1,5 +1,18 @@
-html, body {
-    min-height: 100%;
+body, html {
+  height: 100%;
+}
+#showLeftPush.btn {
+    border: medium none;
+    border-radius: 0;
+    box-shadow: none;
+    color: #FFFFFF;
+    font-size: 27px;
+    margin: 0;
+    padding: 3px 10px 6px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 10000;
 }
 .cbp-spmenu {
     background: #47a3da;
@@ -7,18 +20,18 @@ html, body {
 }
  
 .cbp-spmenu h3 {
-    color: #afdefa;
+    background: none repeat scroll 0 0 #0D77B6;
+    color: #AFDEFA;
     font-size: 1.9em;
-    padding: 20px;
-    margin: 0;
     font-weight: 300;
-    background: #0d77b6;
+    margin: 0;
+    padding: 5px 14px;
 }
  
 .cbp-spmenu a {
     display: block;
     color: #fff;
-    font-size: 1.1em;
+    font-size: 16px;
     font-weight: 300;
 }
  
@@ -32,20 +45,32 @@ html, body {
 }
  
 /* Orientation-dependent styles for the content of the menu */
- 
+ #main{
+   
+  }
 .cbp-spmenu-vertical {
     width: 240px;
     height: 100%;
     top: 0;
     z-index: 1000;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.3);
 }
  
 .cbp-spmenu-vertical a {
     border-bottom: 1px solid #258ecd;
     padding: 1em;
 }
+.cbp-spmenu-vertical a span {
+    display: inline-block;
+    font-size: 22px;
+    position: relative;
+    right: -3px;
+}
+.cbp-spmenu-vertical a:hover {
+    text-decoration: none;
+}
 .cbp-spmenu-left {
-    left: -240px;
+    left: -195px;
 }
 .cbp-spmenu-left.cbp-spmenu-open {
     left: 0px;
@@ -53,7 +78,7 @@ html, body {
 .cbp-spmenu-push {
     overflow-x: hidden;
     position: relative;
-    left: 0;
+    left: 45px;
 }
  
 .cbp-spmenu-push-toright {
@@ -61,7 +86,7 @@ html, body {
 }
  
 .cbp-spmenu-push-toleft {
-    left: -240px;
+    left: -195px;
 }
 .cbp-spmenu,
 .cbp-spmenu-push {
@@ -80,12 +105,10 @@ html, body {
  
     .cbp-spmenu-left,
     .cbp-spmenu-push-toleft {
-        left: -190px;
+        left: -145px;
     }
  
-    .cbp-spmenu-right {
-        right: -190px;
-    }
+   
  
     .cbp-spmenu-push-toright {
         left: 190px;
