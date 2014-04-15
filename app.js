@@ -8,6 +8,9 @@ var oneDay = 86400000;
 app.use(express.compress());
 
 // Serve up content from public directory
+app.get('/', function(req, res){
+  res.send('hello world');
+});
 app.use(express.static(__dirname + '/public', { maxAge: oneDay }));
 
 app.listen(process.env.PORT || 3000);
