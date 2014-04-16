@@ -16,7 +16,8 @@
 					"coordinates": [-6.326, 53.357]
 				}
 			}
-		]
+		],
+		"rendercode":"<scripr>L.mapbox.map('map', 'gfpk.hplpkmo7')</script>" 
 	},
 	{
 		"name":"Phoenix Park",
@@ -35,7 +36,8 @@
 					"coordinates": [-6.326, 53.357]
 				}
 			}
-		]
+		],
+		"rendercode":"<scripr>L.mapbox.map('map', 'gfpk.hplpkmo7')</script>"
 	},
 	{
 		"name":"Phoenix Park",
@@ -54,7 +56,8 @@
 					"coordinates": [-6.326, 53.357]
 				}
 			}
-		]
+		],
+		"rendercode":"<scripr>L.mapbox.map('map', 'gfpk.hplpkmo7')</script>"
 	}
 	
 
