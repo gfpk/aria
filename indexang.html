@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<!-- 1. Angularify by adding "lang="en" data-framework="angularjs" below in html tag -->
+<html lang="en" data-framework="angularjs">
+	<head>
+		<title>Angular Example</title>
+		<link rel="stylesheet" type="text/css" href="css/angular.css"/>
+        <script src="js/vendor/angular.js"></script>
+	</head>
+	<body>
+		<!-- 2. Angularify by adding "ng-app" below in div tag -->
+		<div id="main" ng-app>
+			<!-- 4. Angularify by adding "ng-click="$event.preventDefault()"" below in nav tag -->
+			<nav ng-click="$event.preventDefault()">
+			<a href="#" ng-click="active='home'" class="home">Home</a>     
+			<!-- 3. Angularify ng-click="active='home'" etc. -->
+			<a href="#" ng-click="active='projects'" class="projects">Projects</a>
+			<a href="#" ng-click="active='services'" class="services">Services</a>
+			<a href="#" ng-click="active='contact'" class="contact">Contact</a>
+			</nav>
+			
+			<!-- 5. Angularify by adding two <p> tags below -->
+			<p ng-hide="active">Please click a new item</p>
+			<p ng-show="active">You chose <b>{{active}}</b></p>
+		</div>
+		
+	</body>
+</html>
