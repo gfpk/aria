@@ -1,5 +1,6 @@
 var mapList = angular.module('mapList', []);
  
+
 	mapList.controller('mapListCtrl', ['$scope', '$http', '$timeout',
 		function ($scope, $http, $timeout) {
 			$http.get('http://127.0.0.1:3000/json/maps.json').success(function(data) {
@@ -11,6 +12,7 @@ var mapList = angular.module('mapList', []);
 			        for(var i=0;i<arr;i++){
 			        	console.log(arr);
 			        }
+
 
 			    };
 				$timeout($scope.testTimeOutfunction(),100);
