@@ -9,14 +9,21 @@ var mapList = angular.module('mapList', []);
 			        var arr = ($scope.maps);
 			        for(var i =0;i<arr.length;i++){
 			        	var elId ="map-" + String(i); 	
-			        	var elem = document.getElementById(elId);
+			        	//var elem = document.getElementById(elId);
 			        	var mapData = arr[i];
-			        	console.log(mapData);
-			        	L.mapbox.map(elId, mapboxId).setView(mapData.geo.center, mapData.geo.zoom);;
+			        	var zemap = L.mapbox.map (elId, mapboxId).setView(mapData.geo.center, mapData.geo.zoom);
+			        	
+			      
+			        	if(mapData.markers){
 
+							var myLayer = L.mapbox.featureLayer().addTo(zemap);
 
+							var feature = mapData.markers;
+							myLayer.setGeoJSON(feature);
+    		
+			        	};
 
-			        }
+			        };
 			       
 			    });
 

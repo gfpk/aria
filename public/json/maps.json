@@ -7,15 +7,18 @@
 			"center":[ 53.371, -6.183],
 			"zoom":15
 		},
-		"markers":[
+		"geoJSON":[
 			{
-				"feature":{
-					"title":"some Title"
-				},
-				"geometry":{
-					"coordinates": [-6.183, 53.371]
-				}
+			  "type": "Feature",
+			  "geometry": {
+				    "type": "Point",
+				    "coordinates": [-6.183, 53.371]
+				  },
+			  "properties": {
+				    "name": "Dinagat Islands"
+				  }
 			}
+
 		],
 		"rendercode":"<scripr>L.mapbox.map('map', 'gfpk.hplpkmo7')</script>" 
 	},
@@ -27,15 +30,18 @@
 			"center":[53.338, -6.259],
 			"zoom":17
 		},
-		"markers":[
+		"geoJSON":[
 			{
-				"feature":{
-					"title":"some Title"
-				},
-				"geometry":{
-					"coordinates": [-6.359, 53.338]
-				}
+			  "type": "Feature",
+			  "geometry": {
+				    "type": "Point",
+				    "coordinates": [-6.259, 53.338]
+				  },
+			  "properties": {
+				    "name": "Dinagat Islands"
+				  }
 			}
+
 		],
 		"rendercode":"<scripr>L.mapbox.map('map', 'gfpk.hplpkmo7')</script>"
 	},
@@ -47,15 +53,18 @@
 			"center":[53.357, -6.326],
 			"zoom":14
 		},
-		"markers":[
+		"geoJSON":[
 			{
-				"feature":{
-					"title":"some Title"
-				},
-				"geometry":{
-					"coordinates": [-6.326, 53.357]
-				}
+			  "type": "Feature",
+			  "geometry": {
+				    "type": "Point",
+				    "coordinates": [-6.183, 53.371]
+				  },
+			  "properties": {
+				    "name": "Dinagat Islands"
+				  }
 			}
+
 		],
 		"rendercode":"<scripr>L.mapbox.map('map', 'gfpk.hplpkmo7')</script>"
 	},
@@ -67,15 +76,18 @@
 			"center":[53.274, -6.272],
 			"zoom":15
 		},
-		"markers":[
+		"geoJSON":[
 			{
-				"feature":{
-					"title":"some Title"
-				},
-				"geometry":{
-					"coordinates": [-6.274, 53.272]
-				}
+			  "type": "Feature",
+			  "geometry": {
+				    "type": "Point",
+				    "coordinates": [-6.183, 53.371]
+				  },
+			  "properties": {
+				    "name": "Dinagat Islands"
+				  }
 			}
+
 		],
 		"rendercode":"<scripr>L.mapbox.map('map', 'gfpk.hplpkmo7')</script>"
 	}
