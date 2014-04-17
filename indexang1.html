@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<!-- Angular in 20 mins "https://www.youtube.com/watch?v=tnXO-i7944M" -->
+<!-- 1. Angularify by adding "ng-app" in html tag -->
+<html data-ng-app>
+	<head>
+		<title>Angular1 App Example</title>
+		<!-- 2. Angular animations "animations.css" -->
+		<link type="text/css" href="css/animations.css" rel="stylesheet" />
+	</head>
+<!-- 4. Add ng-init This creates a property in memory called root scope for "customers=['TEd','Tim','Michael.'Zed']" inside body tag -->
+	<body data-ng-init="customers=['TEd','Tim','Michelle','Zed']">
+		<h1>Angulars in 20-ish minutes</h1>
+		
+<!-- 3. Data Binding expressions (writing out the searchText onscreen) -->
+		<div>
+			Search: <input type="text" data-ng-model="searchText" />
+			{{ searchText}}
+			<br />
+			<h3>Customers:</h3>
+			<table>
+<!-- 5. Add ng-repeat and filter by searchText -->	
+				<tr data-ng-repeat="cust in customers | filter:searchText">
+					<td>{{ cust }}</td>
+					<td></td>
+				</tr>
+			</table>
+		</div>
+	    <script src="js/vendor/angular.js"></script>
+        <script src="js/vendor/angular-route.js"></script>
+        <script src="js/vendor/angular-animation.js"></script>
+	    <script>
+		</script>
+
+	</body>
+</html>
