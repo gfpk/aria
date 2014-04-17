@@ -33,8 +33,8 @@
 
                 <div class="col-md-6 portlate" ng-repeat="map in maps">
                   <h5>{{map.name}}</h5>
-                  <div id='map'class="map">
-                      <div make-map></div>
+                  <div id='map-{{$index}}'class="map" map-data={{map}}>
+                      
                   </div>                
               </div>
         </div>  
