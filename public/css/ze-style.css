@@ -5,6 +5,11 @@
 body, html {
   height: 100%;
 }
+body.login-page{
+  background-image: url('../img/bg-2.jpg');
+  background-position: center;
+  background-size:cover;
+}
 #showLeftPush.btn {
     border: medium none;
     border-radius: 0;

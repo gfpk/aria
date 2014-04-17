@@ -1,5 +1,5 @@
 var mapList = angular.module('mapList', []);
- 
+
 	mapList.controller('mapListCtrl', ['$scope', '$http','$timeout',
 		function ($scope, $http, $timeout) {
 			$http.get('http://127.0.0.1:3000/json/maps.json').success(function(data) {
@@ -11,23 +11,22 @@ var mapList = angular.module('mapList', []);
 			        	var elId ="map-" + String(i); 	
 			        	//var elem = document.getElementById(elId);
 			        	var mapData = arr[i];
-			        	var zemap = L.mapbox.map (elId, mapboxId).setView(mapData.geo.center, mapData.geo.zoom);
-			        	
-			      
-			        	if(mapData.markers){
+			        	var zeMap = L.mapbox.map (elId, mapboxId).setView(mapData.geo.center, mapData.geo.zoom);
+			        	if(mapData.geoJSON){
 
-							var myLayer = L.mapbox.featureLayer().addTo(zemap);
+			        		var zeLayer = L.mapbox.featureLayer().addTo(zeMap);
 
-							var feature = mapData.markers;
-							myLayer.setGeoJSON(feature);
-    		
+							var feature = mapData.geoJSON
+
+							zeLayer.setGeoJSON(feature);
+			       			
 			        	};
 
 			        };
 			       
 			    });
 
-				$timeout($scope.rendermaps,1000);
+				$timeout($scope.rendermaps);
 
 				
 	});

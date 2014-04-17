@@ -5,7 +5,7 @@
 		"id": "gfpk.map-z6zqpvk6",
 		"geo":{
 			"center":[ 53.371, -6.183],
-			"zoom":15
+			"zoom":14
 		},
 		"geoJSON":[
 			{
@@ -15,7 +15,19 @@
 				    "coordinates": [-6.183, 53.371]
 				  },
 			  "properties": {
-				    "name": "Dinagat Islands"
+				    "name": "Start"
+				  }
+			},
+			{
+			  "type": "Feature",
+			  "geometry": {
+				    "type": "Point",
+				    "coordinates": [-6.190, 53.379]
+				  },
+			  "properties": {
+				    "name": "finish",
+				    "marker-size": "medium",
+        			"marker-color": "#ffc423"
 				  }
 			}
 
@@ -28,7 +40,7 @@
 		"id": "gfpk.map-z6zqpvk6",
 		"geo":{
 			"center":[53.338, -6.259],
-			"zoom":17
+			"zoom":16
 		},
 		"geoJSON":[
 			{
@@ -38,7 +50,10 @@
 				    "coordinates": [-6.259, 53.338]
 				  },
 			  "properties": {
-				    "name": "Dinagat Islands"
+				    "name": "Start",
+				    "description": "Start",
+				    "marker-size": "medium",
+        			"marker-color": "#ffc423"
 				  }
 			}
 
@@ -51,17 +66,18 @@
 		"id": "gfpk.map-z6zqpvk6",
 		"geo":{
 			"center":[53.357, -6.326],
-			"zoom":14
+			"zoom":13
 		},
 		"geoJSON":[
 			{
 			  "type": "Feature",
 			  "geometry": {
 				    "type": "Point",
-				    "coordinates": [-6.183, 53.371]
+				    "coordinates": [-6.3, 53.361]
 				  },
 			  "properties": {
-				    "name": "Dinagat Islands"
+				    "name": "Start",
+				    "marker-color": "#ffc423"
 				  }
 			}
 
@@ -74,17 +90,18 @@
 		"id": "gfpk.map-z6zqpvk6",
 		"geo":{	
 			"center":[53.274, -6.272],
-			"zoom":15
+			"zoom":14
 		},
 		"geoJSON":[
 			{
 			  "type": "Feature",
 			  "geometry": {
 				    "type": "Point",
-				    "coordinates": [-6.183, 53.371]
+				    "coordinates": [-6.273, 53.222]
 				  },
 			  "properties": {
-				    "name": "Dinagat Islands"
+				    "name": "Start",
+				    "marker-color": "#ffc423"
 				  }
 			}
 
