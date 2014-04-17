@@ -168,14 +168,26 @@ body.login-page{
   font-family: 'zocial', sans-serif;
 }
 
-.form-signin{
-  max-width: 330px;
-  padding: 15px;
-  margin: 0 auto;
-  background: rgba(255,255,255,0.4);
-  border: 1px solid rgba(255,255,255,0.6);
-  border-radius: 0 0 4px 4px;
-border-top: none;}
+.form-signin {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: none repeat scroll 0 0 rgba(255, 255, 255, 0.8);
+    border-image: none;
+    border-radius: 0 0 4px 4px;
+    border-style: none solid solid;
+    border-width: medium 1px 1px;
+    box-shadow: 0 0 9px rgba(0, 0, 0, 0.53);
+    color: #111111;
+    margin: 0 auto;
+    max-width: 330px;
+    padding: 15px;
+}
+.form-signin small
+{
+  color: #333;
+}
 
 
 .login-input {
