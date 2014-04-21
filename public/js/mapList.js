@@ -11,21 +11,23 @@ var mapList = angular.module('mapList', []);
 			        	var elId ="map-" + String(i); 	
 			        	//var elem = document.getElementById(elId);
 			        	var mapData = arr[i];
+			        	console.log(document.getElementById(elId));
+			        		console.log('boo');
 			        	var zeMap = L.mapbox.map (elId, mapboxId).setView(mapData.geo.center, mapData.geo.zoom);
 			        	if(mapData.geoJSON){
-
+			        		
 			        		var zeLayer = L.mapbox.featureLayer().addTo(zeMap);
 
-							var feature = mapData.geoJSON
+							 
 
-							zeLayer.setGeoJSON(feature);
+							zeLayer.setGeoJSON(mapData.geoJSON);
 			       			
 			        	};
 
 			        };
 			       
 			    });
-
+				//$scope.rendermaps();
 				$timeout($scope.rendermaps);
 
 				

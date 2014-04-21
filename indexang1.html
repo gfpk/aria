@@ -20,7 +20,7 @@
 			<table>
 <!-- 5. Add ng-repeat and filter by searchText -->	
 				<tr data-ng-repeat="cust in customers | filter:searchText">
-					<td>{{ cust }}</td>
+					<td>{{$index}}.{{ cust }}</td>
 					<td></td>
 				</tr>
 			</table>
