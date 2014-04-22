@@ -20,9 +20,39 @@ body, html {
   position: relative;
   height: 70%;
 }
+#slider ul{
+  margin: 0;
+  padding: 0;
+}
+#slider li{
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  opacity: 0;
+}
 
+#slider li:first-child
+{
+  background: url('../img/bg.jpg');
+  background-position: center;
+  background-size:cover;
+}
+#slider li:nth-child(2)
+{
+  background: url('../img/bg-2.jpg');
+  background-position: center;
+  background-size:cover;
+}
+#slider li:nth-child(3)
+{
+  background: #333;
+  background-position: center;
+  background-size:cover;
+}
 body.login-page{
-  background-image: url('../img/bg-2.jpg');
+  background: url('../img/bg.jpg');
   background-position: center;
   background-size:cover;
 }
@@ -199,6 +229,9 @@ body.login-page{
     margin: 0 auto;
     max-width: 330px;
     padding: 15px;
+    border: none;
+    position: relative;
+    z-index: 300;
 }
 .form-signin small
 {
