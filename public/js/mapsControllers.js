@@ -71,9 +71,7 @@ mapsControllers.controller('SinglePhoneCtrl', ['$scope', '$routeParams', '$http'
 			    var longitude = e.latlng.lng;
 			    console.log(latitude + " - " + longitude);
 			    L.marker([latitude, longitude]).addTo(zeMap);
-				    $scope.singlemapdata.geoJSON =+{
-				    	$scope.singlemapdata
-				    }
+				   console.log( $scope.singlemapdata.geoJSON); 
 			    });
 
 			};
