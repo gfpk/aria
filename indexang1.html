@@ -20,17 +20,15 @@
 			<br />
 			<h3>Customers:</h3><br /><br />
 <!-- 5. Add ng-repeat and filter by searchText -->	
-<<<<<<< HEAD
-				<tr data-ng-repeat="cust in customers | filter:searchText">
+				<tr ng-repeat="cust in customers | filter:searchText">
 					<td>{{$index}}.{{ cust }}</td>
 					<td></td>
 				</tr>
 			</table>
-=======
+
 				<p ng-repeat="cust in customers | filter:searchText">
 					<b>{{ cust }}</b></p>
 			
->>>>>>> jrh1
 		</div>
 	    <script src="js/vendor/angular.js"></script>
         <script src="js/vendor/angular-route.js"></script>
