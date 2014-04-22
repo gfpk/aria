@@ -1,4 +1,4 @@
-<html ng-app="mapList">
+<html ng-app="mapApp">
 <head>
 	<title>Trainer App|Maps</title>
     
@@ -7,10 +7,12 @@
     <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,600|Source+Code+Pro" rel="stylesheet" />
     <!--[if lte IE 8]><script src="js/vendor/html5shiv.js" type="text/javascript"></script><![endif]-->
     <script src='https://api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.js'></script>
-    <script type="text/javascript" src="js/vendor/angular.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.js"></script>
+
     <script type="text/javascript" src="js/vendor/angular-route.min.js"></script>
     <link href='https://api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.css' rel='stylesheet' />
-    <script type="text/javascript" src="js/mapList.js"></script>
+    <script type="text/javascript" src="js/mapsApp.js"></script>
+    <script type="text/javascript" src="js/mapsControllers.js"></script>
    	
 </head>
 <body class="cbp-spmenu-push main">
@@ -26,22 +28,9 @@
 
     <div id="sheet">
       <div class="container">
-        <div id="main"  ng-controller="mapListCtrl">
-          
-              <h2>Browse our sample maps templates</h2>
-              <h4>You can use them as they are or use ase base for customisation</h4>
-              
-             
-              <div class="row">
-
-                <div class="col-md-6 portlate" ng-repeat="map in maps">
-                  <h5>{{map.name}}</h5>
-                  <p>{{map.description}}</p>
-
-                  <div id='map-{{$index}}'class="map">                    
-                  </div>   
-                  <small> <a href="#">use this map to create your own</a>   </small>          
-              </div>
+        hjdfgdjs
+        <div ng-view></div>
+        
         </div>  
         </div>     
     </div>
