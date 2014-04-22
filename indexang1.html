@@ -1,33 +1,39 @@
 <!DOCTYPE HTML>
 <!-- Angular in 20 mins "https://www.youtube.com/watch?v=tnXO-i7944M" -->
 <!-- 1. Angularify by adding "ng-app" in html tag -->
-<html data-ng-app>
+<html ng-app>
 	<head>
-		<title>Angular1 App Example</title>
+		<title>Angular Search Box</title>
 		<!-- 2. Angular animations "animations.css" -->
-		<link type="text/css" href="css/animations.css" rel="stylesheet" />
+		<link type="text/css" href="css/angular2.css" rel="stylesheet" />
+        <script src="js/vendor/angular.js"></script>
+
 	</head>
-<!-- 4. Add ng-init This creates a property in memory called root scope for "customers=['TEd','Tim','Michael.'Zed']" inside body tag -->
-	<body data-ng-init="customers=['TEd','Tim','Michelle','Zed']">
-		<h1>Angulars in 20-ish minutes</h1>
+<!-- 4. Add ng-init This creates a property in memory in scope for "customers=[...]" inside body tag -->
+	<body data-ng-init="customers=['Aidran','Jonny','Greg','Tom','Allen','John','Gary']">
+		<h1>Simple Angular Search Box </h1>
 		
 <!-- 3. Data Binding expressions (writing out the searchText onscreen) -->
-		<div>
-			Search: <input type="text" data-ng-model="searchText" />
+		<div >
+			Search: <input type="text" ng-model="searchText" />
 			{{ searchText}}
 			<br />
-			<h3>Customers:</h3>
-			<table>
+			<h3>Customers:</h3><br /><br />
 <!-- 5. Add ng-repeat and filter by searchText -->	
+<<<<<<< HEAD
 				<tr data-ng-repeat="cust in customers | filter:searchText">
 					<td>{{$index}}.{{ cust }}</td>
 					<td></td>
 				</tr>
 			</table>
+=======
+				<p ng-repeat="cust in customers | filter:searchText">
+					<b>{{ cust }}</b></p>
+			
+>>>>>>> jrh1
 		</div>
 	    <script src="js/vendor/angular.js"></script>
         <script src="js/vendor/angular-route.js"></script>
-        <script src="js/vendor/angular-animation.js"></script>
 	    <script>
 		</script>
 
