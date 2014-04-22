@@ -10,7 +10,7 @@ mapApp.config(['$routeProvider',
 			templateUrl: 'partials/maplist.html',
 			controller: 'MapListCtrl'
 		}).
-		when('/maps.html/:mapName', {
+		when('/maps.html/:mapNo', {
 			templateUrl: 'partials/singlemap.html',
 			controller: 'SinglePhoneCtrl'
 		}).
