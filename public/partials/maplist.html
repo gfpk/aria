@@ -1,0 +1,17 @@
+<div id ='wideview'>
+<div class="container">
+<h2>Browse our sample maps templates</h2>
+<h4>You can use them as they are or use ase base for customisation</h4>
+              
+ <div class="row">
+
+    <div class="col-md-6 portlate" ng-repeat="map in maps">
+    <h5>{{map.name}}</h5>
+    <p>{{map.description}}</p>
+
+    <div id='map-{{$index}}'class="map">                    
+  </div>   
+
+<small> <a href="#/maps.html/{{$index}}">use this map to create your own</a>   </small>          
+</div>
+</div>
