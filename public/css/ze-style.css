@@ -1,3 +1,22 @@
+.ok{
+  color:#090;
+}
+.not-ok{
+  color: #ffc423;
+}
+#ui-panel {
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    height: 100%;
+    top: 0;
+    width: 60px;
+    z-index: 900;
+    background-color: #C9DB00;
+    position: fixed;
+    
+
+}
 .col-md-6.portlate{
     padding: 15px;
 }
