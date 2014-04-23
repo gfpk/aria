@@ -17,5 +17,6 @@ mapApp.config(['$routeProvider',
 		otherwise({
 			redirectTo: '/maps.html'
 	});
+		
 }]);
 
