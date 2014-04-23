@@ -5,11 +5,19 @@ $( document ).ready(function() {
         init: function()
         {
             
+<<<<<<< HEAD
             var initialFadeIn = 500,
              itemInterval = 6000,   
              fadeTime = 1000,
              numberOfItems = $('#slider li').length,   
              currentItem = 0;
+=======
+            var initialFadeIn = 500;
+            var itemInterval = 6000;   
+             var fadeTime = 1000;
+            var numberOfItems = $('#slider li').length;   
+            var currentItem = 0;
+>>>>>>> jrh1
          
             $('#slider li').eq(currentItem).animate({opacity:'1'},initialFadeIn);
   
@@ -28,4 +36,8 @@ $( document ).ready(function() {
     };
  
     slideRotator.init();
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> jrh1
