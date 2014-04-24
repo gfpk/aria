@@ -2,50 +2,60 @@
 	"name":"Default Plan Name",
 	"author":"Me",
 	"planitems":[
-		{
+		{	
+			"index":1,
 			"title":"Default",
 			"date":"Default",
 			"time":"",
+			"type":"training",
 			"icon":"img/planicons/26.png",
 			"duration":"",
 			"description":"Lorem ipsum, Nulla dui ante, pulvinar ac auctor vitae, sollicitudin et tortor. Cras vestibulum suscipit odio ac dapibus. In hac habitasse platea dictumst. Cras pulvinar erat et nunc fringilla, quis molestie diam pulvinar.",
-			"done":"false"
+			"done":true
 		},
-		{
+			{	
+			"index":2,
 			"title":"Default",
 			"date":"Default",
 			"time":"",
+			"type":"training",
 			"icon":"img/planicons/26.png",
 			"duration":"",
 			"description":"Lorem ipsum, Nulla dui ante, pulvinar ac auctor vitae, sollicitudin et tortor. Cras vestibulum suscipit odio ac dapibus. In hac habitasse platea dictumst. Cras pulvinar erat et nunc fringilla, quis molestie diam pulvinar.",
-			"done":"false"
+			"done":true
 		},
-		{
+			{	
+			"index":3,
 			"title":"Default",
 			"date":"Default",
 			"time":"",
+			"type":"training",
 			"icon":"img/planicons/26.png",
 			"duration":"",
 			"description":"Lorem ipsum, Nulla dui ante, pulvinar ac auctor vitae, sollicitudin et tortor. Cras vestibulum suscipit odio ac dapibus. In hac habitasse platea dictumst. Cras pulvinar erat et nunc fringilla, quis molestie diam pulvinar.",
-			"done":"false"
+			"done":true
 		},
-		{
+			{	
+			"index":4,
 			"title":"Default",
 			"date":"Default",
 			"time":"",
+			"type":"training",
 			"icon":"img/planicons/26.png",
 			"duration":"",
 			"description":"Lorem ipsum, Nulla dui ante, pulvinar ac auctor vitae, sollicitudin et tortor. Cras vestibulum suscipit odio ac dapibus. In hac habitasse platea dictumst. Cras pulvinar erat et nunc fringilla, quis molestie diam pulvinar.",
-			"done":"false"
+			"done":true
 		},
-		{
+			{	
+			"index":5,
 			"title":"Default",
 			"date":"Default",
 			"time":"",
+			"type":"training",
 			"icon":"img/planicons/26.png",
 			"duration":"",
 			"description":"Lorem ipsum, Nulla dui ante, pulvinar ac auctor vitae, sollicitudin et tortor. Cras vestibulum suscipit odio ac dapibus. In hac habitasse platea dictumst. Cras pulvinar erat et nunc fringilla, quis molestie diam pulvinar.",
-			"done":"false"
+			"done":true
 		}
 	]
-}
+} 

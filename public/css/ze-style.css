@@ -1,8 +1,17 @@
+#brand {
+    border-bottom: medium none;
+    padding: 5px;
+    width: 147px;
+    opacity: 0;
+}
+.cbp-spmenu #brand.a:hover {
+    background-color: none;
+}
 .ok{
-  color:#090;
+  color:#47A3DA;
 }
 .not-ok{
-  color: #ffc423;
+  color: #D64937;
 }
 #ui-panel {
     background-position: right bottom;
@@ -115,7 +124,7 @@ body.login-page{
 }
  
 .cbp-spmenu a:hover {
-    background: #258ecd;
+    background-color: #258ecd;
 }
  
 .cbp-spmenu a:active {

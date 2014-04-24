@@ -12,29 +12,71 @@ var localstorage = {
         }
     }
 };
-
-var localPlanData = localstorage.get('fitPlanData');
+var storagekey = 'fitPlanData';
+var localPlanData = localstorage.get(storagekey);
 var resourceURL = 'http://127.0.0.1:3000/json/plan.json';
 
 plansControllers.controller('PlanController', ['$scope','$http', 
 	function ($scope, $http){
 
 		$scope.plan=[];
-		$scope.planitems = [];
-
-
+		
 		if(localPlanData){
 			$scope.plan = localPlanData;
-			$scope.planitems = localPlanData.planitems;	
+			
 		}else{
 			$http.get(resourceURL).success(function(data) {
 				$scope.plan = data;
-				$scope.planitems = data.planitems;
-				localstorage.set('fitPlanData', data);
+				localstorage.set(storagekey, data);
 			});
 		};
 
-		console.log($scope.plan);
+		
+		$scope.savechanges = function(){
+			localstorage.set(storagekey, $scope.plan);
+			console.log('saved')
+		};
+
+		$scope.remove=function(item){ 
+			var ind=$scope.plan.planitems.indexOf(item)
+			$scope.plan.planitems.splice(ind,1);  
+			$scope.savechanges();   
+
+		}
+		$scope.stageToggle=function(item){ 
+			var ind=$scope.plan.planitems.indexOf(item)
+			$scope.plan.planitems[ind].done == false ? ($scope.plan.planitems[ind].done = true):($scope.plan.planitems[ind].done = false);
+			$scope.savechanges();
+
+		}
+
+		$scope.indexyfy = function(item){
+
+
+		}
+
+
+		//sortable
+
+		angular.element(document).ready(function () {
+
+		var ind = 0;
+
+		   $( "#itemlist" ).sortable({ 
+		   		handle: '.fa-sort',
+		        stop: function(event,ui){  
+			          var n = ($( "#itemlist" ).sortable('toArray')).toString();
+			          console.log(n);
+			          var neworder = n.split(',').map(function(item) {return parseInt(item, 10);}); 
+			          console.log(neworder);
+
+			        }
+		    });
+		   $('.fa-sort').tooltip();
+		   $('.fa-trash-o').tooltip();
+
+		});
+		
 
 	}		
 ]);

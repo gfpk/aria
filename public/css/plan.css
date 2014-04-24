@@ -1,6 +1,52 @@
 #wallmessages {
     margin-left: 70px;
 }
+
+.message-item .status {
+    background: none repeat scroll 0 0 #FFFFFF;
+    bottom: -14px;
+    left: -11px;
+    position: absolute;
+    cursor: pointer;
+}
+.message-item.ui-sortable-helper .message-inner{
+	border-color: #47A3DA
+}
+.message-item.ui-sortable-helper .message-inner:before {
+    border-right: 10px solid #47A3DA;
+    
+}
+.message-item.ui-sortable-helper:before{
+	opacity: 0;
+}
+.message-item.ui-sortable-placeholder{
+	background-color: #eee;
+	visibility: visible !important;
+	border-radius: 4px;
+	box-shadow: 0 2px 2px rgba(0,0,0, 0.1) inset;
+
+}
+.message-item .controls {
+    background-color: #47A3DA;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    color: #fff;
+    border-radius: 0 3px 3px 0;
+}
+.message-item .controls i{
+	padding: 10px;
+	display: block;
+	cursor: pointer;
+}
+.message-item .controls i.fa-sort
+{
+	cursor: move;
+}
+.message-item .controls i:hover{
+	background: rgba(255,255,255,0.5);
+}
 .message-item {
 margin-bottom: 25px;
 margin-left: 40px;
@@ -10,7 +56,7 @@ position: relative;
 background: #fff;
 border: 1px solid #ddd;
 border-radius: 3px;
-padding: 10px;
+padding: 10px 40px 30px 16px;
 position: relative;
 }
 .message-item .message-inner:before {
@@ -81,6 +127,7 @@ overflow: hidden;
 font-size: 16px;
 font-weight: bold;
 margin: 0;
+display: inline-block;
 
 }
 .message-item .message-head .post-meta {
