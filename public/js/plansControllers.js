@@ -65,11 +65,13 @@ plansControllers.controller('PlanController', ['$scope','$http',
 		   $( "#itemlist" ).sortable({ 
 		   		handle: '.fa-sort',
 		        stop: function(event,ui){  
-			          var n = ($( "#itemlist" ).sortable('toArray')).toString();
-			          console.log(n);
-			          var neworder = n.split(',').map(function(item) {return parseInt(item, 10);}); 
-			          console.log(neworder);
-
+					var neworder = ($( "#itemlist" ).sortable('toArray')).map(function(item) {return parseInt(item)}); 
+			        console.log(neworder);
+			        for(var i=0;i<neworder.length;i++){
+			        	$scope.plan.planitems[i].index = neworder[i];
+			        	console.log(($scope.plan.planitems[i].index) + "-" + $scope.plan.planitems[i].title);
+			        	}
+			       		$scope.savechanges();
 			        }
 		    });
 		   $('.fa-sort').tooltip();
