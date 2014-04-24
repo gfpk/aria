@@ -12,29 +12,63 @@ var localstorage = {
         }
     }
 };
-
-var localPlanData = localstorage.get('fitPlanData');
+var storagekey = 'fitPlanData';
+var localPlanData = localstorage.get(storagekey);
 var resourceURL = 'http://127.0.0.1:3000/json/plan.json';
 
 plansControllers.controller('PlanController', ['$scope','$http', 
 	function ($scope, $http){
 
 		$scope.plan=[];
-		$scope.planitems = [];
-
-
+		
 		if(localPlanData){
 			$scope.plan = localPlanData;
-			$scope.planitems = localPlanData.planitems;	
+			
 		}else{
 			$http.get(resourceURL).success(function(data) {
 				$scope.plan = data;
-				$scope.planitems = data.planitems;
-				localstorage.set('fitPlanData', data);
+				localstorage.set(storagekey, data);
 			});
 		};
 
-		console.log($scope.plan);
+		
+		$scope.savechanges = function(){
+			localstorage.set(storagekey, $scope.plan);
+			
+		};
 
-	}		
-]);
+		$scope.remove=function(item){ 
+			var ind=$scope.plan.planitems.indexOf(item)
+			$scope.plan.planitems.splice(ind,1);  
+			$scope.savechanges();   
+
+		}
+		$scope.stageToggle=function(item){ 
+			var ind=$scope.plan.planitems.indexOf(item)
+			$scope.plan.planitems[ind].done == false ? ($scope.plan.planitems[ind].done = true):($scope.plan.planitems[ind].done = false);
+			$scope.savechanges();
+
+		}
+
+		$scope.indexyfy = function(item){
+
+
+		}
+
+
+		//sortable
+		$scope.$watch("plan.planitems", function(value) {
+	        console.log("Model: " + value.map(function(e){return e.index}).join(','));
+	        $scope.savechanges(); 
+	        console.log($scope.plan.planitems)
+	    },true);
+
+		angular.element(document).ready(function () {
+		   $('.fa-sort').tooltip();
+		   $('.fa-trash-o').tooltip();
+		});
+		
+
+	
+
+}]);

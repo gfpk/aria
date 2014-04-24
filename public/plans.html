@@ -11,6 +11,7 @@
     <!--[if lte IE 8]><script src="js/vendor/html5shiv.js" type="text/javascript"></script><![endif]-->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.js"></script>
     <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+    <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
     <script type="text/javascript" src="js/vendor/xeditable.js"></script>
     <script type="text/javascript" src="js/plansApp.js"></script>
     <script type="text/javascript" src="js/plansControllers.js"></script>
@@ -19,7 +20,7 @@
 <body class="cbp-spmenu-push main">
     <!--offCanvasMenu-->
 	<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left " id="cbp-spmenu-s1">
-        <h3>FitApp<a id="showLeftPush" class="btn btn-large pull-right"><spam class="glyphicon glyphicon-th-list"></spam></a></h3>
+        <h3><a id="brand" href="/">FitApp</a><a id="showLeftPush" class="btn btn-large pull-right"><spam class="glyphicon glyphicon-th-list"></spam></a></h3>
         <a href="maps.html">My Maps <span class="glyphicon glyphicon-map-marker pull-right"></span></a>
         <a href="timeline.html">My Programmes<span class="glyphicon glyphicon-tasks pull-right"></span> </a>
         <a href="calendar.html">My Calendar <span class="glyphicon glyphicon-calendar pull-right"></span> </a>
@@ -29,25 +30,30 @@
 
 
     <div id="sheet" >
-    	<div id="ui-panel" ></div>
+    <div id="ui-panel" >
+        ...
+    </div>
      
   	<div class="bigpage" ng-controller="PlanController">
         <div class="qa-message-list" id="wallmessages" >
         <hgroup>
-        	<h2><a href="#" editable-text="plan.name">{{ plan.name || 'empty' }}</a></h2>
+        	<h2><a href="#" editable-text="plan.name" onaftersave='savechanges()'>{{ plan.name || 'empty' }}</a></h2>
         	<h4>by {{plan.author}}</h4>
         	<hr>
         </hgroup>
-    				<div class="message-item" ng-repeat="item in planitems" >
+        <div id="itemlist">
+        <!-- item end-->
+    				<div  class="message-item" ng-repeat="item in plan.planitems | orderBy:'item.index'" dnd-list="plan.planitems">
 						<div class="message-inner">
 
 							<div class="message-head clearfix">
 								<div class="avatar pull-left"> <img ng-src="{{ item.icon }}" /></div>
-                                <span class="pull-right ok"><i class="fa fa-check-square-o fa-2x"></i></span>
-                                <span class="pull-right not-ok"><i class="fa fa-square-o fa-2x"></i></span>
-
+                                <div class="status" ng-click="stageToggle(item)">
+                                    <span class="pull-right ok" ng-show="item.done"><i class="fa fa-check-square-o fa-2x"></i></span>
+                                    <span class="pull-right not-ok" ng-hide="item.done"><i class="fa fa-square-o fa-2x"></i></span>
+                                </div>
 								<div class="user-detail">
-									<h5 class="handle" editable-text="item.title">{{item.title}}</h5>
+									<h5 class="handle" editable-text="item.title" onaftersave='savechanges()'>{{item.index}}={{item.title}}</h5> <br>
 									<div class="post-meta">
 										<div class="asker-meta">
 											<span class="qa-message-what"></span>
@@ -62,14 +68,17 @@
 									</div>
 								</div>
 							</div>
-							<div class="qa-message-content" editable-textarea="item.description">
+							<div class="qa-message-content" editable-textarea="item.description" e-rows="7" e-cols="40">
 								{{item.description}}
 							</div>
-					</div></div>
-					
-					
-					
+
+					</div>
+                    <div class="controls"> <i class="fa fa-sort" title="sort"></i> <i class="fa fa-trash-o" ng-click="remove(item)" title="drop"></i></div>
+                </div>
+					<!-- item end-->
 				</div>
+					
+			</div>
         
         
         </div>     
