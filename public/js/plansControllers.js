@@ -34,7 +34,7 @@ plansControllers.controller('PlanController', ['$scope','$http',
 		
 		$scope.savechanges = function(){
 			localstorage.set(storagekey, $scope.plan);
-			console.log('saved')
+			
 		};
 
 		$scope.remove=function(item){ 
@@ -57,28 +57,18 @@ plansControllers.controller('PlanController', ['$scope','$http',
 
 
 		//sortable
+		$scope.$watch("plan.planitems", function(value) {
+	        console.log("Model: " + value.map(function(e){return e.index}).join(','));
+	        $scope.savechanges(); 
+	        console.log($scope.plan.planitems)
+	    },true);
 
 		angular.element(document).ready(function () {
-
-		var ind = 0;
-
-		   $( "#itemlist" ).sortable({ 
-		   		handle: '.fa-sort',
-		        stop: function(event,ui){  
-					var neworder = ($( "#itemlist" ).sortable('toArray')).map(function(item) {return parseInt(item)}); 
-			        console.log(neworder);
-			        for(var i=0;i<neworder.length;i++){
-			        	$scope.plan.planitems[i].index = neworder[i];
-			        	console.log(($scope.plan.planitems[i].index) + "-" + $scope.plan.planitems[i].title);
-			        	}
-			       		$scope.savechanges();
-			        }
-		    });
 		   $('.fa-sort').tooltip();
 		   $('.fa-trash-o').tooltip();
-
 		});
 		
 
-	}		
-]);
+	
+
+}]);

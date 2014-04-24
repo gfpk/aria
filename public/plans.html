@@ -43,7 +43,7 @@
         </hgroup>
         <div id="itemlist">
         <!-- item end-->
-    				<div id="{{$index}}" class="message-item" ng-repeat="item in plan.planitems | orderBy:index" >
+    				<div  class="message-item" ng-repeat="item in plan.planitems | orderBy:'item.index'" dnd-list="plan.planitems">
 						<div class="message-inner">
 
 							<div class="message-head clearfix">
@@ -53,7 +53,7 @@
                                     <span class="pull-right not-ok" ng-hide="item.done"><i class="fa fa-square-o fa-2x"></i></span>
                                 </div>
 								<div class="user-detail">
-									<h5 class="handle" editable-text="item.title" onaftersave='savechanges()'>{{item.index}}.{{item.title}}</h5> <br>
+									<h5 class="handle" editable-text="item.title" onaftersave='savechanges()'>{{item.index}}={{item.title}}</h5> <br>
 									<div class="post-meta">
 										<div class="asker-meta">
 											<span class="qa-message-what"></span>
