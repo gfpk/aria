@@ -41,6 +41,7 @@ plansApp.directive('dndList', function() {
                 // to trigger an update in angular use $apply()
                 // since we're outside angulars lifecycle
                 scope.$apply(scope.model);
+                console.log('cwel');
                 
             },
             axis:'y'

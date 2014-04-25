@@ -17,7 +17,7 @@
     <script type="text/javascript" src="js/plansControllers.js"></script>
    	
 </head>
-<body class="cbp-spmenu-push main">
+<body class="cbp-spmenu-push main" ng-controller="PlanController">
     <!--offCanvasMenu-->
 	<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left " id="cbp-spmenu-s1">
         <h3><a id="brand" href="/">FitApp</a><a id="showLeftPush" class="btn btn-large pull-right"><spam class="glyphicon glyphicon-th-list"></spam></a></h3>
@@ -31,10 +31,10 @@
 
     <div id="sheet" >
     <div id="ui-panel" >
-        ...
+        <i class="fa fa-plus fa-3x" ng-click="addItem()"></i>
     </div>
      
-  	<div class="bigpage" ng-controller="PlanController">
+  	<div class="bigpage" >
         <div class="qa-message-list" id="wallmessages" >
         <hgroup>
         	<h2><a href="#" editable-text="plan.name" onaftersave='savechanges()'>{{ plan.name || 'empty' }}</a></h2>
@@ -53,9 +53,10 @@
                                     <span class="pull-right not-ok" ng-hide="item.done"><i class="fa fa-square-o fa-2x"></i></span>
                                 </div>
 								<div class="user-detail">
-									<h5 class="handle" editable-text="item.title" onaftersave='savechanges()'>{{item.index}}={{item.title}}</h5> <br>
+									<h5 class="handle" editable-text="item.title" onaftersave='savechanges()'>{{item.title}}</h5> <br>
 									<div class="post-meta">
 										<div class="asker-meta">
+
 											<span class="qa-message-what"></span>
 											<span class="qa-message-when">
 												<span class="qa-message-when-data">{{item.date}}</span>
@@ -64,6 +65,10 @@
 												<span class="qa-message-who-pad">@</span>
 												<span class="qa-message-who-data">{{item.time}}</span>
 											</span>
+                                            <span class="qa-message-type">
+                                                <span class="qa-message-type-pad">@</span>
+                                                <span class="qa-message-type-data">{{item.time}}</span>
+                                            </span>
 										</div>
 									</div>
 								</div>

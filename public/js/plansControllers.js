@@ -54,6 +54,20 @@ plansControllers.controller('PlanController', ['$scope','$http',
 
 
 		}
+		$scope.addItem = function(){
+			var x = new Object;
+			x.index = ($scope.plan.planitems.length +1);
+			x.title = "Change me";
+			x.date ="Default";
+			x.tytpe = "training";
+			x.icon = "img/planicons/training.png";
+			x.description = "add Description here";
+			x.done = false;
+			$scope.plan.planitems.push(x);
+			console.log(x);
+			console.log($scope.plan.planitems);
+		};
+
 
 
 		//sortable
@@ -62,6 +76,9 @@ plansControllers.controller('PlanController', ['$scope','$http',
 	        $scope.savechanges(); 
 	        console.log($scope.plan.planitems)
 	    },true);
+
+	    //droppable
+
 
 		angular.element(document).ready(function () {
 		   $('.fa-sort').tooltip();
