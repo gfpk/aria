@@ -40,7 +40,8 @@ plansControllers.controller('PlanController', ['$scope','$http',
 		$scope.remove=function(item){ 
 			var ind=$scope.plan.planitems.indexOf(item)
 			$scope.plan.planitems.splice(ind,1);  
-			$scope.savechanges();   
+			$scope.savechanges();
+
 
 		}
 		$scope.stageToggle=function(item){ 
@@ -54,34 +55,34 @@ plansControllers.controller('PlanController', ['$scope','$http',
 
 
 		}
-		$scope.addItem = function(){
+		$scope.addItem = function(type){
 			var x = new Object;
 			x.index = ($scope.plan.planitems.length +1);
 			x.title = "Change me";
-			x.date ="Default";
-			x.tytpe = "training";
+			x.date = new Date(Date.now());
+			x.type = type;
 			x.icon = "img/planicons/training.png";
 			x.description = "add Description here";
 			x.done = false;
+			console.log(Date.now());
 			$scope.plan.planitems.push(x);
-			console.log(x);
-			console.log($scope.plan.planitems);
+			
 		};
 
 
 
 		//sortable
 		$scope.$watch("plan.planitems", function(value) {
-	        console.log("Model: " + value.map(function(e){return e.index}).join(','));
+	        //console.log("Model: " + value.map(function(e){return e.index}).join(','));
 	        $scope.savechanges(); 
-	        console.log($scope.plan.planitems)
+	        //console.log($scope.plan.planitems)
 	    },true);
 
-	    //droppable
-
+	    
 
 		angular.element(document).ready(function () {
 		   $('.fa-sort').tooltip();
+		   $('#ui-panel img').tooltip();
 		   $('.fa-trash-o').tooltip();
 		});
 		

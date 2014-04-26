@@ -15,6 +15,7 @@
     <script type="text/javascript" src="js/vendor/xeditable.js"></script>
     <script type="text/javascript" src="js/plansApp.js"></script>
     <script type="text/javascript" src="js/plansControllers.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.6.0/ui-bootstrap-tpls.min.js"></script>
    	
 </head>
 <body class="cbp-spmenu-push main" ng-controller="PlanController">
@@ -31,7 +32,13 @@
 
     <div id="sheet" >
     <div id="ui-panel" >
-        <i class="fa fa-plus fa-3x" ng-click="addItem()"></i>
+        <img src="img/planicons/training-add.png" ng-click="addItem('training')" title="add TRAINING" data-placement="right" >
+        <img src="img/planicons/workout-add.png" ng-click="addItem('workout')" title="add WORKOUT" data-placement="right" >
+        <img src="img/planicons/cardio-add.png" ng-click="addItem('cardio')" title="add CARDIO" data-placement="right" >
+        <img src="img/planicons/meal-add.png" ng-click="addItem('meal')" title="add MEAL" data-placement="right" >
+        
+        <img src="img/planicons/supplements-add.png" ng-click="addItem('supplements')" title="add SUPPLEMENTS" data-placement="right" >
+        <img src="img/planicons/milestone-add.png" ng-click="addItem('milestone')" title="add MILESTONE" data-placement="right" >
     </div>
      
   	<div class="bigpage" >
@@ -43,32 +50,32 @@
         </hgroup>
         <div id="itemlist">
         <!-- item end-->
-    				<div  class="message-item" ng-repeat="item in plan.planitems | orderBy:'item.index'" dnd-list="plan.planitems">
+    				<div  class="message-item" ng-repeat="item in plan.planitems track by $index | orderBy:'item.index'" dnd-list="plan.planitems">
 						<div class="message-inner">
 
 							<div class="message-head clearfix">
-								<div class="avatar pull-left"> <img ng-src="{{ item.icon }}" /></div>
+								<div class="avatar pull-left"> <img ng-src="img/planicons/{{item.type}}.png" /></div>
                                 <div class="status" ng-click="stageToggle(item)">
                                     <span class="pull-right ok" ng-show="item.done"><i class="fa fa-check-square-o fa-2x"></i></span>
                                     <span class="pull-right not-ok" ng-hide="item.done"><i class="fa fa-square-o fa-2x"></i></span>
                                 </div>
 								<div class="user-detail">
-									<h5 class="handle" editable-text="item.title" onaftersave='savechanges()'>{{item.title}}</h5> <br>
+									<h5 class="handle" editable-text="item.title" onaftersave='savechanges()'>{{item.title}}</h5>
+                                    <i>{{item.type}}</i> <br>
 									<div class="post-meta">
 										<div class="asker-meta">
 
 											<span class="qa-message-what"></span>
 											<span class="qa-message-when">
-												<span class="qa-message-when-data">{{item.date}}</span>
+                                                 <a href="#" editable-bsdate="item.date" e-datepicker-popup="dd-MM-yy">
+    {{ (item.date | date:"dd MMMM yy") || 'empty' }}
+  </a>
+												
 											</span>
 											<span class="qa-message-who">
 												<span class="qa-message-who-pad">@</span>
 												<span class="qa-message-who-data">{{item.time}}</span>
 											</span>
-                                            <span class="qa-message-type">
-                                                <span class="qa-message-type-pad">@</span>
-                                                <span class="qa-message-type-data">{{item.time}}</span>
-                                            </span>
 										</div>
 									</div>
 								</div>

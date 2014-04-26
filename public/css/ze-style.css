@@ -33,6 +33,12 @@
     padding: 14px;
     text-shadow: 0 2px 2px rgba(0, 0, 0, 0.26);
 }
+#ui-panel img {
+   margin: 10px 5px;
+    cursor: pointer;
+    max-width: 50px;
+    
+}
 .col-md-6.portlate{
     padding: 15px;
 }
