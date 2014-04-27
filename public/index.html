@@ -7,11 +7,14 @@
     <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
     <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,600|Source+Code+Pro" rel="stylesheet" />
         <!--[if lte IE 8]><script src="js/vendor/html5shiv.js" type="text/javascript"></script><![endif]-->
+    <script type="text/javascript" src="js/fblogin.js"></script>
+   
+
    
    
 	
 </head>
-<body class="login-page">
+<body class="login-page" id="fb-root">
 <div id="slider">
     <ul>
         <li></li>
@@ -29,25 +32,9 @@
             <small class="text-muted">Post on your favourite social network to start</small>
             <br><br>
 
-            
-<p>
-<a class="btn btn-primary social-login-btn social-facebook" href="/auth/facebook"><i class="fa fa-facebook"></i></a>
-<a class="btn btn-primary social-login-btn social-twitter" href="/auth/twitter"><i class="fa fa-twitter"></i></a>
-</p>
-<p>
-<a class="btn btn-primary social-login-btn social-linkedin" href="/auth/linkedin"><i class="fa fa-linkedin"></i></a>
-<a class="btn btn-primary social-login-btn social-google" href="/auth/google"><i class="fa fa-google-plus"></i></a>
-</p>
+            <div class="fb-login-button" data-max-rows="20" data-size="xlarge" data-show-faces="true" data-auto-logout-link="false"
+            ></div>
 
-
-
-
-            <small class="text-muted">Or sign in with your email</small>
-            <br>
-            
-            <input id="" class="form-control login-input" placeholder="Email Address" type="text">
-
-            <a href="/main.html" class="btn btn-primary btn-lg btn-block" type="submit" data-bindattr-3="3">Sign in</a href="/main.html">
         </form>
     </div>
 

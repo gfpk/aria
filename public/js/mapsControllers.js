@@ -13,7 +13,7 @@ var localstorage = {
     }
 };
 
-var resourceURL = 'http://127.0.0.1:3000/json/maps.json';
+var resourceURL = '/json/maps.json';
 var localMapData = localstorage.get('fitMapData');
 var mapboxId = "gfpk.map-z6zqpvk6";
 
@@ -30,6 +30,7 @@ mapsControllers.controller('MapListCtrl', ['$scope', '$http','$timeout',
 			}else{
 				$http.get(resourceURL).success(function(data) {
 					$scope.maps = data;
+					console.log($scope.maps )
 					localstorage.set('fitMapData', $scope.maps);
 				});
 			}
