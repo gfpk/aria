@@ -31,19 +31,22 @@
 
     <div id="sheet">
         <div class="bigpage" ng-controller="StatsController">
-        <h1>Running Statistics</h1>
+        <h1>{{stats[2].title}} </h1>
         <div class="row">
             <div id="chartContainer1" >
+            
+        
             </div>
         </div>
-
-
-        
-        
+        <br style="clear:both">
+        <div id="mybuttons" class="row">
+            <button class="btn" id="chart">Bar Cart</button>
+            <button class="btn" id="pie">Pie</button>
+            <button class="btn" id="dognut">Dognut</button>
+            <button class="btn" id="area">Area</button>
         </div>
-       </div>     
+        </div>
     </div>
-
    <!--le Script-->
     <script type="text/javascript" src="js/vendor/modernizr-2.6.2.min.js"></script>
     

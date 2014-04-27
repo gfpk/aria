@@ -1,20 +1,60 @@
+
 [
 	{
-		"name":"Course 1 Stats",
-		"description":"St. Anne's Park Course",
-		"id": "map1",
-		"Times":{
-			"center":[ 53.371, 56.183, 39.00, 99.00 ],
-			"zoom":14
-		}
-	},
-	{
-		"name":"Course 2 Stats",
-		"description":"Stephen's Green Park Course",
-		"id": "Map2",
-		"Times":{
-			"center":[21.00, 22.00, 23.00],
-			"zoom":16
-		}
-	}
+        "theme": "theme3",
+        "title": "Weekly Distance Chart Theme 3 Dognut type chart",
+        "text": "My Weekly - Km Running Record",
+        "data": 
+        [              
+          	{
+		      "type": "doughnut",
+		      "dataPoints": [
+		      { "label": "Day 1", "y": 10 },
+		      { "label": "Day 2", "y": 15 },
+		      { "label": "Day 3", "y": 25 },
+		      { "label": "Day 4", "y": 30 },
+		      { "label": "Day 5", "y": 32 },
+		      { "label": "Day 6", "y": 35 },
+		      { "label": "Day 7", "y": 28 }]
+    		}
+   		]
+   	},
+   	{
+        "theme": "theme1",
+        "title": "Weekly Distance Chart Theme 1 type chart",
+        "text": "Weekly - Km Running Pie Chart",
+        "data": 
+        [              
+          	{
+		      "type": "pie",
+		      "dataPoints": [
+		      { "label": "Monday", "y": 10 },
+		      { "label": "Tuesday", "y": 15 },
+		      { "label": "Wednesday", "y": 25 },
+		      { "label": "Thursday", "y": 30 },
+		      { "label": "Friday", "y": 30 },
+		      { "label": "Saturday", "y": 35 },
+		      { "label": "Sunday", "y": 20 }]
+    		}
+   		]
+   	},
+   	{
+        "theme": "theme2",
+        "title": "Weekly Distance Chart Theme 2 Bar chart",
+        "text": "Weekly - Km Running Bar Chart",
+        "data": 
+        [              
+          	{
+		      "type": "bar",
+		      "dataPoints": [
+		      { "label": "Monday", "y": 10 },
+		      { "label": "Tuesday", "y": 15 },
+		      { "label": "Wednesday", "y": 25 },
+		      { "label": "Thursday", "y": 30 },
+		      { "label": "Friday", "y": 30 },
+		      { "label": "Saturday", "y": 35 },
+		      { "label": "Sunday", "y": 20 }]
+    		}
+   		]
+   	}
 ]

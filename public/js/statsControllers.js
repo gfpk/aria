@@ -12,6 +12,7 @@ var localstorage = {
         }
     }
 };
+var	themeindex = 2;
 var storagekey = 'fitStatData';
 var localStatData = localstorage.get(storagekey);
 var resourceURL = 'http://127.0.0.1:3000/json/stats.json';
@@ -23,38 +24,28 @@ statsControllers.controller('StatsController', ['$scope','$http',
 		
 		if(localStatData){
 			$scope.stats = localStatData;
-			
+			 // console.log($scope.stats);
 		}else{
 			$http.get(resourceURL).success(function(data) {
+				// console.log(data);
 				$scope.stats = data;
 				localstorage.set(storagekey, data);
+				// console.log($scope.stats[0].title.text );
 			});
+
 		};
-		$scope.renderstat = function(obj, type, theme){
+
+		$scope.renderstat = function(obj){
 
 			var chart = new CanvasJS.Chart(obj, {
-                theme: theme,//theme1
+                theme: $scope.stats[themeindex].theme,
                 title:{
-                    text: "How long I ran....."              
+                    text: $scope.stats[themeindex].text            
                 },
-                data: [              
-                {
-                   
-                    type: type,
-	                    dataPoints: [
-
-			                    { label: "Week 1", y: 100 },
-			                    { label: "Week 2", y: 15 },
-			                    { label: "Week 3", y: 25 },
-			                    { label: "Week 4", y: 55 },
-			                    { label: "Week 5", y: 28 }
-		                    ]
-	                	}
-	                ]
+                data: $scope.stats[themeindex].data
+                
             });
             chart.render();
-          //  console.log("After chart render")
-
 		}
 		 
 		
@@ -62,8 +53,8 @@ statsControllers.controller('StatsController', ['$scope','$http',
 
 		angular.element(document).ready(function () {
 		  
-		   $scope.renderstat("chartContainer1", "column", "theme2");
-		   // console.log("After angular render");
+		   $scope.renderstat("chartContainer1");
+		    //console.log($scope.stats[0].text);
 		});
 		
 
