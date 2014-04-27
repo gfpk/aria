@@ -1,0 +1,20 @@
+[
+	{
+		"name":"Course 1 Stats",
+		"description":"St. Anne's Park Course",
+		"id": "map1",
+		"Times":{
+			"center":[ 53.371, 56.183, 39.00, 99.00 ],
+			"zoom":14
+		}
+	},
+	{
+		"name":"Course 2 Stats",
+		"description":"Stephen's Green Park Course",
+		"id": "Map2",
+		"Times":{
+			"center":[21.00, 22.00, 23.00],
+			"zoom":16
+		}
+	}
+]

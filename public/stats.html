@@ -1,0 +1,55 @@
+<html ng-app="statApp">
+<head>
+	<title>Trainer App|Stats</title>
+    
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/ze-style.css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,600|Source+Code+Pro" rel="stylesheet" />
+    <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+    <!--[if lte IE 8]><script src="js/vendor/html5shiv.js" type="text/javascript"></script><![endif]-->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.js"></script>
+    <script type="text/javascript" src="js/vendor/canvasjs.min.js"></script>
+    <script type="text/javascript" src="js/statsApp.js"></script>
+    <script type="text/javascript" src="js/statsControllers.js"></script>
+    
+    
+   
+   	
+</head>
+<body class="cbp-spmenu-push main">
+    <!--offCanvasMenu-->
+	<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left " id="cbp-spmenu-s1">
+        <h3>FitApp<a id="showLeftPush" class="btn btn-large pull-right"><spam class="glyphicon glyphicon-th-list"></spam></a></h3>
+        <a href="maps.html">My Maps <span class="glyphicon glyphicon-map-marker pull-right"></span></a>
+        <a href="timeline.html">My Programmes<span class="glyphicon glyphicon-tasks pull-right"></span> </a>
+        <a href="calendar.html">My Calendar <span class="glyphicon glyphicon-calendar pull-right"></span> </a>
+        <a href="plans.html"> My Plans <span class="glyphicon glyphicon-signal pull-right"></span></a>
+        <a href="stats.html"> My Stats <span class="glyphicon glyphicon-stats pull-right"></span></a>
+  </nav>
+
+
+    <div id="sheet">
+        <div class="bigpage" ng-controller="StatsController">
+        <h1>Running Statistics</h1>
+        <div class="row">
+            <div id="chartContainer1" >
+            </div>
+        </div>
+
+
+        
+        
+        </div>
+       </div>     
+    </div>
+
+   <!--le Script-->
+    <script type="text/javascript" src="js/vendor/modernizr-2.6.2.min.js"></script>
+    
+    <script type="text/javascript" src="js/vendor/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/offcanvasmenu.js"></script>  
+    <script type="text/javascript" src="js/mapbox.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
