@@ -30,9 +30,21 @@
         			"marker-color": "#ffc423"
 				  }
 			}
-
 		],
-		"rendercode":"<scripr>L.mapbox.map('map', 'gfpk.hplpkmo7')</script>" 
+		"trail":{ "type": "Feature",
+		        "geometry": {
+		          "type": "LineString",
+		          "coordinates": [
+		            [-6.190, 53.379], [103.0, 1.0], [104.0, 0.0], [105.0, 1.0]
+		            ]
+		          },
+		        "properties": {
+		        	"prop0": "value0",
+          			"prop1": 0.0
+		          
+		          }
+		        }
+ 
 	},
 	{
 		"name":"Stephen's Green Park",
