@@ -111,7 +111,7 @@ var localstorage = {
             console.log(response.data.url)
       });
       console.log(user);
-      console.log(user.pic);
+    
      $("#username h2").text(user.name);
 
     });

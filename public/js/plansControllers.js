@@ -15,7 +15,7 @@ var localstorage = {
 var storagekey = 'fitPlanData';
 var localPlanData = localstorage.get(storagekey);
 var resourceURL = ( "http://" + window.location.host +'/json/plan.json');
-
+console.log(resourceURL);
 plansControllers.controller('PlanController', ['$scope','$http', 
 	function ($scope, $http){
 
@@ -23,12 +23,13 @@ plansControllers.controller('PlanController', ['$scope','$http',
 		
 		if(localPlanData){
 			$scope.plan = localPlanData;
+			console.log($scope.plan)
 			
 		}else{
 			$http.get(resourceURL).success(function(data) {
 				$scope.plan = data;
 				console.log($scope.plan)
-				localstorage.set(storagekey, data);
+				//localstorage.set(storagekey, data);
 			});
 		};
 

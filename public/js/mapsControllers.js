@@ -13,9 +13,11 @@ var localstorage = {
     }
 };
 
+var storagekey = 'fitMapData';
 var resourceURL = '/json/maps.json';
-var localMapData = localstorage.get('fitMapData');
+var localMapData = localstorage.get(storagekey);
 var mapboxId = "gfpk.map-z6zqpvk6";
+
 
 //local storage helper
 
@@ -27,11 +29,17 @@ mapsControllers.controller('MapListCtrl', ['$scope', '$http','$timeout',
 
 			if(localMapData){
 				$scope.maps = localMapData;	
+				 angular.element(document).ready(function () {
+				        $scope.rendermaps();
+				    });
 			}else{
 				$http.get(resourceURL).success(function(data) {
 					$scope.maps = data;
-					console.log($scope.maps )
-					localstorage.set('fitMapData', $scope.maps);
+					localstorage.set(storagekey, data);
+					console.log($scope.maps);
+					 angular.element(document).ready(function () {
+				        $scope.rendermaps();
+				    });
 				});
 			}
 	
@@ -61,9 +69,7 @@ mapsControllers.controller('MapListCtrl', ['$scope', '$http','$timeout',
 		        };
 		       
 		    };
-		    angular.element(document).ready(function () {
-		        $scope.rendermaps();
-		    });
+		   
 				   
 				
 	
@@ -81,7 +87,7 @@ mapsControllers.controller('SinglePhoneCtrl', ['$scope', '$routeParams', '$http'
 		}else{
 			$http.get(resourceURL).success(function(data) {
 				$scope.maps = data;
-				localstorage.set('fitMapData', $scope.maps);
+				//localstorage.set('fitMapData', $scope.maps);
 			});
 		}
 
@@ -126,53 +132,16 @@ mapsControllers.controller('SinglePhoneCtrl', ['$scope', '$routeParams', '$http'
 
 		angular.element(document).ready(function () {
 		        $scope.rendermap();
+		        $('.nav-tabs li a').click(function (e) {
+				  e.preventDefault()
+				$(this).tab('show')
+		});
+
 		});
 
 
-		/*$http.get(resourceURL).success(function(data) {
-
-		$scope.singlemapdata = data[$routeParams.mapNo];
-			
-			$timeout($scope.rendermap);
-			$scope.addMarker = function(){
-				$('*').css('cursor', "crosshair");
-					//var zeMap = L.mapbox.map();
-					zeMap.on('click', function(e) {		
-				    var latitude = e.latlng.lat;
-				    var longitude = e.latlng.lng;
-				    console.log(latitude + " - " + longitude);
-				    L.marker([latitude, longitude],{"marker-color": "#ffc423"}).addTo(zeMap);
-				    var newMarker = {};
-				    newMarker = {
-						  "type": "Feature",
-						  "geometry": {
-							    "type": "Point",
-							    "coordinates": [longitude, latitude]
-							  },
-						  "properties": {
-							    "name": "Default"
-
-
-							  }
-						},
-
-					$scope.singlemapdata.geoJSON.push(newMarker);
-				
-					console.log($scope.singlemapdata.geoJSON);
-					localStorage.setItem('singlemapdata'+ $routeParams.mapNo, JSON.stringify($scope.singlemapdata));
-
-			    });
-
-			};
-
-			
-		});*/
-
+		
 		//tabs
-		$('.nav-tabs li a').click(function (e) {
-		  e.preventDefault()
-		  $(this).tab('show')
-		});
-
+		
 		
 }]);
