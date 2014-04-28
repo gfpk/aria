@@ -36,7 +36,7 @@ var localstorage = {
       // (1) JavaScript created popup windows are blocked by most browsers unless they 
       // result from direct interaction from people using the app (such as a mouse click)
       // (2) it is a bad experience to be continually prompted to login upon page load.
-      redirToLogin();
+     
       FB.login();
     } else {
       // In this case, the person is not logged into Facebook, so we call the login() 
@@ -44,19 +44,30 @@ var localstorage = {
       // of whether they are logged into the app. If they aren't then they'll see the Login
       // dialog right after they log in to Facebook. 
       // The same caveats as above apply to the FB.login() call here.
-      console.log("sdhgshsrjts");
-      redirToLogin();
+      
       FB.login();
     }
   });
 
-  
+  FB.getLoginStatus(function(response) {
+  if (response.status === 'connected') {
+      var uid = response.authResponse.userID;
+      var accessToken = response.authResponse.accessToken;
+    } else if (response.status === 'not_authorized') {
+      alert('feck off')
+    } else {
+      if(!(window.location.href == ("http://" + window.location.host +"/"))){
+        console.log(("http://" + window.location.host +"/"));
+        console.log(window.location.href);
+       // alert("adfgadfg");
 
+        window.location.replace(("http://" + window.location.host +"/"));
 
-
-
-
+      };
+    }
+  });
 };
+
 
 
 
@@ -78,10 +89,19 @@ var localstorage = {
     console.log('Welcome!  Fetching your information.... ');
     FB.api('/me', function(response) {
 
+
       console.log('Good to see you, ' + response.name + '.');
 
       if(!(window.location.href == ("http://" + window.location.host + "/main.html"))){
-        window.location.replace('/main.html');
+         $("#greet").html('<h4>Welcome, '+ response.first_name +'</h4><h5>You are being redirected...</h5> ');
+        window.setTimeout(function(){
+          
+          window.location.replace(("http://" + window.location.host +"/main.html "))
+        
+
+        },2000);
+        //window.location.replace('/main.html');
+
       };
       
       localstorage.set(response.id, response);
@@ -92,7 +112,7 @@ var localstorage = {
       });
       console.log(user);
       console.log(user.pic);
-     $("#username").text(user.name);
+     $("#username h2").text(user.name);
 
     });
   };
