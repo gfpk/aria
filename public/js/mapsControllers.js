@@ -80,17 +80,35 @@ mapsControllers.controller('SinglePhoneCtrl', ['$scope', '$routeParams', '$http'
 
 		$scope.maps=[];
 		$scope.map ={};
-
+		console.log($scope.map.geoJSON);
 		if(localMapData && localMapData[$routeParams.mapNo]){
-			$scope.map = localMapData[$routeParams.mapNo];	
+			$scope.map = localMapData[$routeParams.mapNo];
+			$scope.maps = localMapData;
+			console.log($scope.map);
+			console.log($scope.maps);
+			angular.element(document).ready(function () {
+		        $scope.rendermap();
+		        
+			});
+	
+
 			
 		}else{
 			$http.get(resourceURL).success(function(data) {
 				$scope.maps = data;
 				$scope.map = data[$routeParams.mapNo];
-				localstorage.set('fitMapData', $scope.maps);
+				angular.element(document).ready(function () {
+			        $scope.rendermap();			        
+				});
+				//localstorage.set('fitMapData', $scope.maps);
 			});
 		}
+
+		$scope.savechanges = function(){
+			localstorage.set(storagekey, $scope.maps);
+			console.log($scope.maps[$routeParams.mapNo].geoJSON);
+			
+		};
 
 		$scope.rendermap = function(){	
 			zeMap = L.mapbox.map ('map', mapboxId).setView($scope.map.geo.center, ($scope.map.geo.zoom + 1));
@@ -100,7 +118,18 @@ mapsControllers.controller('SinglePhoneCtrl', ['$scope', '$routeParams', '$http'
 				zeLayer.setGeoJSON($scope.map.geoJSON);    			
         	}
 		};
+		var newmarker = {
 
+			  "type": "Feature",
+			  "geometry": {
+				    "type": "Point",
+				    "coordinates": []
+				  },
+			  "properties": {
+				    "name": "Start"
+				  }
+			
+		}
 	
 
 		$scope.editLayer = {
@@ -113,23 +142,23 @@ mapsControllers.controller('SinglePhoneCtrl', ['$scope', '$routeParams', '$http'
 						console.log($scope.editLayer.addMarker.active);	
 						    var latitude = e.latlng.lat;
 						    var longitude = e.latlng.lng;
+
+						    newmarker.geometry.coordinates=[longitude, latitude];
+						    console.log(newmarker.geometry.coordinates);
+
+						    $scope.maps[$routeParams.mapNo].geoJSON.push(newmarker);
+						    console.log($scope.maps[$routeParams.mapNo].geoJSON);
 						    console.log(latitude + " - " + longitude);
 						    L.marker([latitude, longitude]).addTo(zeMap);
+						    $scope.savechanges();
+						    console.log(newmarker);
 						});
 					}
 				}
 			}
 		};
 
-		angular.element(document).ready(function () {
-		        $scope.rendermap();
-		        $('.nav-tabs li a').click(function (e) {
-				  e.preventDefault()
-				$(this).tab('show')
-		});
-
-		});
-
+		
 
 		
 		//tabs
