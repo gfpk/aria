@@ -5,57 +5,13 @@
 		{	
 			"index":1,
 			"title":"first",
-			"date":"Default",
+			"date":"1984-05-15T18:20:00.000Z",
 			"time":"",
 			"type":"training",
-			"icon":"img/planicons/26.png",
+			"icon":"img/planicons/training.png",
 			"duration":"",
 			"description":"Lorem ipsum, Nulla dui ante, pulvinar ac auctor vitae, sollicitudin et tortor. Cras vestibulum suscipit odio ac dapibus. In hac habitasse platea dictumst. Cras pulvinar erat et nunc fringilla, quis molestie diam pulvinar.",
 			"done":false
-		},
-			{	
-			"index":2,
-			"title":"Second",
-			"date":"Default",
-			"time":"",
-			"type":"training",
-			"icon":"img/planicons/26.png",
-			"duration":"",
-			"description":"Lorem ipsum, Nulla dui ante, pulvinar ac auctor vitae, sollicitudin et tortor. Cras vestibulum suscipit odio ac dapibus. In hac habitasse platea dictumst. Cras pulvinar erat et nunc fringilla, quis molestie diam pulvinar.",
-			"done":false
-		},
-			{	
-			"index":3,
-			"title":"Third",
-			"date":"Default",
-			"time":"",
-			"type":"training",
-			"icon":"img/planicons/26.png",
-			"duration":"",
-			"description":"Lorem ipsum, Nulla dui ante, pulvinar ac auctor vitae, sollicitudin et tortor. Cras vestibulum suscipit odio ac dapibus. In hac habitasse platea dictumst. Cras pulvinar erat et nunc fringilla, quis molestie diam pulvinar.",
-			"done":false
-		},
-			{	
-			"index":4,
-			"title":"fourth",
-			"date":"Default",
-			"time":"",
-			"type":"training",
-			"icon":"img/planicons/26.png",
-			"duration":"",
-			"description":"Lorem ipsum, Nulla dui ante, pulvinar ac auctor vitae, sollicitudin et tortor. Cras vestibulum suscipit odio ac dapibus. In hac habitasse platea dictumst. Cras pulvinar erat et nunc fringilla, quis molestie diam pulvinar.",
-			"done":false
-		},
-			{	
-			"index":5,
-			"title":"sdfgsdh",
-			"date":"Default",
-			"time":"",
-			"type":"training",
-			"icon":"img/planicons/26.png",
-			"duration":"",
-			"description":"Lorem ipsum, Nulla dui ante, pulvinar ac auctor vitae, sollicitudin et tortor. Cras vestibulum suscipit odio ac dapibus. In hac habitasse platea dictumst. Cras pulvinar erat et nunc fringilla, quis molestie diam pulvinar.",
-			"done":true
 		}
 	]
 } 

@@ -1,6 +1,7 @@
 var plansApp = angular.module('plansApp', [
 	'PlansControllers',
 	"xeditable",
+    "ui.bootstrap"
 
 ]);
 plansApp.run(function(editableOptions) {
@@ -41,6 +42,7 @@ plansApp.directive('dndList', function() {
                 // to trigger an update in angular use $apply()
                 // since we're outside angulars lifecycle
                 scope.$apply(scope.model);
+                
                 
             },
             axis:'y'
