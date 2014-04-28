@@ -15,8 +15,7 @@ var localstorage = {
 var	themeindex = 2;
 var storagekey = 'fitStatData';
 var localStatData = localstorage.get(storagekey);
-var resourceURL = 'http://127.0.0.1:3000/json/stats.json';
-
+var resourceURL = ("http://" + window.location.host+ "/json/stats.json");
 statsControllers.controller('StatsController', ['$scope','$http', 
 	function ($scope, $http){
 
