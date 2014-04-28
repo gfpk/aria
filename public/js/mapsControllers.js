@@ -87,29 +87,20 @@ mapsControllers.controller('SinglePhoneCtrl', ['$scope', '$routeParams', '$http'
 		}else{
 			$http.get(resourceURL).success(function(data) {
 				$scope.maps = data;
-				//localstorage.set('fitMapData', $scope.maps);
+				$scope.map = data[$routeParams.mapNo];
+				localstorage.set('fitMapData', $scope.maps);
 			});
 		}
 
 		$scope.rendermap = function(){	
 			zeMap = L.mapbox.map ('map', mapboxId).setView($scope.map.geo.center, ($scope.map.geo.zoom + 1));
 			if($scope.map.geoJSON){
-				console.log($scope.map.geoJSON.length);
+				//console.log($scope.map.geoJSON.length);
         		zeLayer = L.mapbox.featureLayer().addTo(zeMap);
 				zeLayer.setGeoJSON($scope.map.geoJSON);    			
         	}
 		};
 
-		$scope.markerProto = {
-			"type": "Feature",
-			"geometry": {
-				    "type": "Point",
-				    "coordinates": []
-				  },
-			  "properties": {
-				    "name": "Default"
-				  }
-		};
 	
 
 		$scope.editLayer = {
