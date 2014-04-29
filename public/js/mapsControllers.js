@@ -120,6 +120,7 @@ mapsControllers.controller('SinglePhoneCtrl', ['$scope', '$routeParams', '$http'
         			points.push(val);
         		}
         		console.log(points);
+        		var zeLines = L.mapbox.featureLayer().addTo(zeMap);
         		$scope.trail = L.polyline(points).addTo(zeLayer);
 
 
@@ -189,7 +190,9 @@ console.log($scope.map.geoJSON);
 						    $scope.savechanges();
 						   
 						});
-					}
+					}else{
+						$scope.editLayer.addMarker.active = false;
+					};
 				}
 			}
 		};
