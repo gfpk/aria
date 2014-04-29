@@ -7,30 +7,7 @@
 			"center":[ 53.371, -6.183],
 			"zoom":14
 		},
-		"geoJSON":[
-			{
-			  "type": "Feature",
-			  "geometry": {
-				    "type": "Point",
-				    "coordinates": [-6.183, 53.371]
-				  },
-			  "properties": {
-				    "name": "Start"
-				  }
-			},
-			{
-			  "type": "Feature",
-			  "geometry": {
-				    "type": "Point",
-				    "coordinates": [-6.190, 53.379]
-				  },
-			  "properties": {
-				    "name": "finish",
-				    "marker-size": "medium",
-        			"marker-color": "#ffc423"
-				  }
-			}
-		],
+		"geoJSON":[],
 		"trail":{ "type": "Feature",
 		        "geometry": {
 		          "type": "LineString",

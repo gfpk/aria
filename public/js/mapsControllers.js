@@ -102,14 +102,27 @@ mapsControllers.controller('SinglePhoneCtrl', ['$scope', '$routeParams', '$http'
 				angular.element(document).ready(function () {
 			        $scope.rendermap();			        
 				});
-				//localstorage.set('fitMapData', $scope.maps);
+				localstorage.set('fitMapData', $scope.maps);
 			});
 		}
 
 		$scope.savechanges = function(){
 			localstorage.set(storagekey, $scope.maps);
-			
-			
+		};
+
+		$scope.drawline = function(){
+
+				var points = [];
+        		for(i=0;i<($scope.map.geoJSON.length);i++){
+        			//val arr = [];
+        			var val = [$scope.map.geoJSON[i].geometry.coordinates[1], $scope.map.geoJSON[i].geometry.coordinates[0]];
+
+        			points.push(val);
+        		}
+        		console.log(points);
+        		$scope.trail = L.polyline(points).addTo(zeLayer);
+
+
 		};
 
 		$scope.rendermap = function(){	
@@ -121,19 +134,21 @@ mapsControllers.controller('SinglePhoneCtrl', ['$scope', '$routeParams', '$http'
 
         	};
         	if($scope.map.trail){
-        		var points = [];
-        		for(i=0;i<($scope.map.geoJSON.length);i++){
-        			//val arr = [];
-        			var val = ($scope.map.geoJSON[i].geometry.coordinates).reverse();
-
-        			points.push(val);
-        		}
-        		console.log(points);
-        		L.polyline(points, $scope.map.trail.properties).addTo(zeMap);
-
+        		
+        		$scope.drawline();
         	}
 		};
-		
+		$scope.removetrial = function(){
+console.log($scope.map.geoJSON);
+			//zeMap.removeLayer(zeLayer);
+			$scope.map.geoJSON = [];
+			console.log($scope.map.geoJSON);
+
+			$scope.savechanges();
+
+			//L.mapbox.featureLayer().removeFrom(zeMap);
+		}
+
 	
 
 		$scope.editLayer = {
@@ -142,8 +157,9 @@ mapsControllers.controller('SinglePhoneCtrl', ['$scope', '$routeParams', '$http'
 				doMarker:function(){
 					if($scope.editLayer.addMarker.active){
 						$('#map').css('cursor', "crosshair");
+
 						zeMap.on('click', function(e) {	
-						console.log($scope.editLayer.addMarker.active);	
+						
 						    var latitude = e.latlng.lat;
 						    var longitude = e.latlng.lng;
 						    var newmarker = {
@@ -158,16 +174,18 @@ mapsControllers.controller('SinglePhoneCtrl', ['$scope', '$routeParams', '$http'
 									  }
 								
 							}
-							var trail = {
-
-
-							}
+							
 											
 						  
 
 						    $scope.maps[$routeParams.mapNo].geoJSON.push(newmarker);
 						    
-						    L.marker([latitude, longitude]).addTo(zeMap);
+						    L.marker([ latitude, longitude]).addTo(zeMap);
+						    if(zeLayer._geojson.length>0){
+						  
+						    	$scope.trail.addLatLng([ latitude, longitude] );
+						    	$scope.map.trail = true;
+						    };
 						    $scope.savechanges();
 						   
 						});
