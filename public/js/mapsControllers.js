@@ -78,34 +78,33 @@ mapsControllers.controller('MapListCtrl', ['$scope', '$http','$timeout',
 mapsControllers.controller('SinglePhoneCtrl', ['$scope', '$routeParams', '$http','$timeout',
 	function($scope, $routeParams, $http, $timeout) {
 
+		//variables
 		$scope.maps=[];
 		$scope.map ={};
 		
+
+		
 		if(localMapData && localMapData[$routeParams.mapNo]){
-			$scope.map = localMapData[$routeParams.mapNo];
+			$scope.map = localMapData[$routeParams.mapNo];//handling localstorage mapdata
 			$scope.maps = localMapData;
-
-			
-			angular.element(document).ready(function () {
-		        $scope.rendermap();
-		        
-			});
-	
-
-			
+		angular.element(document).ready(function () {
+		        $scope.rendermap();	 
+		              
+			});		
 		}else{
 			$http.get(resourceURL).success(function(data) {
-				$scope.maps = data;
+				$scope.maps = data; //mapdata if localstorage empty
 				$scope.map = data[$routeParams.mapNo];
-				console.log($scope.map);
-				console.log($scope.map.trail);
 				angular.element(document).ready(function () {
-			        $scope.rendermap();			        
+			        $scope.rendermap();	
+			               
 				});
 				localstorage.set('fitMapData', $scope.maps);
 			});
 		}
 
+
+		//functions
 		$scope.savechanges = function(){
 			localstorage.set(storagekey, $scope.maps);
 		};
@@ -129,9 +128,10 @@ mapsControllers.controller('SinglePhoneCtrl', ['$scope', '$routeParams', '$http'
 		$scope.rendermap = function(){	
 			zeMap = L.mapbox.map ('map', mapboxId).setView($scope.map.geo.center, ($scope.map.geo.zoom + 1));
 			if($scope.map.geoJSON){
+
 				//console.log($scope.map.geoJSON.length);
-        		zeLayer = L.mapbox.featureLayer().addTo(zeMap);
-				zeLayer.setGeoJSON($scope.map.geoJSON); 
+        		zeMarkers = L.mapbox.featureLayer().addTo(zeMap);
+				zeMarkers.setGeoJSON($scope.map.geoJSON); 
 
         	};
         	if($scope.map.trail){
@@ -139,8 +139,8 @@ mapsControllers.controller('SinglePhoneCtrl', ['$scope', '$routeParams', '$http'
         		$scope.drawline();
         	}
 		};
-		$scope.removetrial = function(){
-console.log($scope.map.geoJSON);
+		removetrial = function(){
+		console.log($scope.map.geoJSON);
 			//zeMap.removeLayer(zeLayer);
 			$scope.map.geoJSON = [];
 			console.log($scope.map.geoJSON);
@@ -148,59 +148,66 @@ console.log($scope.map.geoJSON);
 			$scope.savechanges();
 
 			//L.mapbox.featureLayer().removeFrom(zeMap);
-		}
+		};
 
-	
+		$scope.markerOptions = {
 
-		$scope.editLayer = {
-			addMarker:{
-				active:true,
-				doMarker:function(){
-					if($scope.editLayer.addMarker.active){
-						$('#map').css('cursor', "crosshair");
 
-						zeMap.on('click', function(e) {	
-						
-						    var latitude = e.latlng.lat;
-						    var longitude = e.latlng.lng;
-						    var newmarker = {
+		};
 
-								  "type": "Feature",
-								  "geometry": {
-									    "type": "Point",
-									    "coordinates": [longitude, latitude]
-									  },
-								  "properties": {
-									    "name": "Start"
-									  }
-								
+		$scope.mapEditor = {
+			addMarker:function(){
+				$('#map').css('cursor', "crosshair");
+
+				zeMap.on('click', function(e) {							
+				    var latitude = e.latlng.lat;
+				    console.log(latitude);
+				    var longitude = e.latlng.lng;
+				    var newmarker = {
+						  "type": "Feature",
+						  "geometry": {
+							    "type": "Point",
+							    "coordinates": [longitude, latitude]
+							  },
+						  "properties": {
+							    "name": "Start"
+							  }								
 							}
-							
-											
-						  
+				
+				    $scope.maps[$routeParams.mapNo].geoJSON.push(newmarker);
+				    L.marker([ latitude, longitude]).addTo(zeMarkers);
 
-						    $scope.maps[$routeParams.mapNo].geoJSON.push(newmarker);
-						    
-						    L.marker([ latitude, longitude]).addTo(zeMap);
-						    if(zeLayer._geojson.length>0){
-						  
-						    	$scope.trail.addLatLng([ latitude, longitude] );
-						    	$scope.map.trail = true;
-						    };
-						    $scope.savechanges();
-						   
-						});
-					}else{
-						$scope.editLayer.addMarker.active = false;
-					};
-				}
-			}
+				    if(zeLayer._geojson.length>0){
+				  
+				    	$scope.trail.addLatLng([ latitude, longitude] );
+				    	$scope.map.trail = true;
+				    }
+				});
+
+			},
+			removemarkers :function(){
+				console.log($scope.map.geoJSON);
+			
+				$scope.map.geoJSON = [];
+				console.log($scope.map.geoJSON);
+
+				$scope.savechanges();
+
+				
+			},
+ 
+
+
+
+
+
+
 		};
 
 		
+		
 
 		
-		//tabs
-		
+	
 		
 }]);
