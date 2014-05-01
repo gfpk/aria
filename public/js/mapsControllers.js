@@ -161,9 +161,10 @@ mapsControllers.controller('SinglePhoneCtrl', ['$scope', '$routeParams', '$http'
 							    "coordinates": [longitude, latitude]
 							  },
 						  "properties": {
-							    "name": "Start"
+							    "name": "Start",
+							    "draggsble":true
 							  }								
-							}
+							};
 				
 				    $scope.maps[$routeParams.mapNo].geoJSON.push(newmarker);
 				    //L.marker([ latitude, longitude]).addTo(zeMarkers);
@@ -195,7 +196,7 @@ mapsControllers.controller('SinglePhoneCtrl', ['$scope', '$routeParams', '$http'
 				
 				zeLines = L.mapbox.featureLayer().addTo(zeMap);
 				
-				
+				$scope.drawline();
 
 
 				$scope.savechanges();
