@@ -47,6 +47,19 @@
 			}
 
 		],
+		"trail":{ "type": "Feature",
+		        "geometry": {
+		          "type": "LineString",
+		          "coordinates": [
+		            [-6.190, 53.379], [103.0, 1.0], [104.0, 0.0], [105.0, 1.0]
+		            ]
+		          },
+		        "properties": {
+		        	"prop0": "value0",
+          			"prop1": 0.0
+		          
+		          }
+		        },
 		"rendercode":"<scripr>L.mapbox.map('map', 'gfpk.hplpkmo7')</script>"
 	},
 	{
@@ -58,19 +71,22 @@
 			"zoom":13
 		},
 		"geoJSON":[
-			{
-			  "type": "Feature",
-			  "geometry": {
-				    "type": "Point",
-				    "coordinates": [-6.3, 53.361]
-				  },
-			  "properties": {
-				    "name": "Start",
-				    "marker-color": "#ffc423"
-				  }
-			}
+			
 
 		],
+		"trail":{ "type": "Feature",
+		        "geometry": {
+		          "type": "LineString",
+		          "coordinates": [
+		            [-6.190, 53.379], [103.0, 1.0], [104.0, 0.0], [105.0, 1.0]
+		            ]
+		          },
+		        "properties": {
+		        	"prop0": "value0",
+          			"prop1": 0.0
+		          
+		          }
+		        },
 		"rendercode":"<scripr>L.mapbox.map('map', 'gfpk.hplpkmo7')</script>"
 	},
 	{
@@ -82,19 +98,21 @@
 			"zoom":14
 		},
 		"geoJSON":[
-			{
-			  "type": "Feature",
-			  "geometry": {
-				    "type": "Point",
-				    "coordinates": [-6.273, 53.222]
-				  },
-			  "properties": {
-				    "name": "Start",
-				    "marker-color": "#ffc423"
-				  }
-			}
-
+			
 		],
+		"trail":{ "type": "Feature",
+		        "geometry": {
+		          "type": "LineString",
+		          "coordinates": [
+		            [-6.190, 53.379], [103.0, 1.0], [104.0, 0.0], [105.0, 1.0]
+		            ]
+		          },
+		        "properties": {
+		        	"prop0": "value0",
+          			"prop1": 0.0
+		          
+		          }
+		        },
 		"rendercode":"<scripr>L.mapbox.map('map', 'gfpk.hplpkmo7')</script>"
 	}
 ]
