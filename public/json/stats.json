@@ -21,8 +21,8 @@
    	},
    	{
         "theme": "theme1",
-        "title": "Weekly Distance Chart Theme 1 type chart",
-        "text": "Weekly - Km Running Pie Chart",
+        "title": "Weekly Distance Chart Pie chart",
+        "text": "Weekly - Km Running Statistics",
         "data": 
         [              
           	{
@@ -40,8 +40,8 @@
    	},
    	{
         "theme": "theme2",
-        "title": "Weekly Distance Chart Theme 2 Bar chart",
-        "text": "Weekly - Km Running Bar Chart",
+        "title": "Weekly Distance Bar Chart ",
+        "text": "Weekly - Km Running Statistics",
         "data": 
         [              
           	{
