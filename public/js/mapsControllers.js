@@ -142,59 +142,62 @@ mapsControllers.controller('SinglePhoneCtrl', ['$scope', '$routeParams', '$http'
 
 		$scope.markerOptions = {
 
-
+			properties:{
+				color:"f00",
+			}
 		};
 
 		$scope.mapEditor = {
 			addMarker:function(){
-				$('#map').css('cursor', "crosshair");
 
-
-
-				zeMap.on('click', function(e) {							
-				    var latitude = e.latlng.lat;
-				    var longitude = e.latlng.lng;
-				    var newmarker = {
-						  "type": "Feature",
-						  "geometry": {
-							    "type": "Point",
-							    "coordinates": [longitude, latitude]
-							  },
-						  "properties": {
-							    "name": "Start",
-							    "draggsble":true
-							  }								
-							};
+					$('#map').css('cursor', "crosshair");
 				
-				    $scope.maps[$routeParams.mapNo].geoJSON.push(newmarker);
-				    //L.marker([ latitude, longitude]).addTo(zeMarkers);
-				    zeMarkers.setGeoJSON($scope.maps[$routeParams.mapNo].geoJSON);
-
-				    if(zeMarkers._geojson.length>0){
-				  		
-				  		$scope.map.trail = true;
-				    	$scope.trail.addLatLng([ latitude, longitude] );
-
-				    }
-
-				    $scope.savechanges();
-				});
+				
+				
+								zeMap.on('click', function(e) {							
+								    var latitude = e.latlng.lat;
+								    var longitude = e.latlng.lng;
+								    console.log($scope.markerOptions.properties);
+								    var newmarker = {
+										  "type": "Feature",
+										  "geometry": {
+											    "type": "Point",
+											    "coordinates": [longitude, latitude]
+											  }			
+											};
+									newmarker.properties ={
+										"marker-color":$scope.markerOptions.properties.color,
+									};
+									console.log(newmarker);
+								    $scope.maps[$routeParams.mapNo].geoJSON.push(newmarker);
+								    //L.marker([ latitude, longitude]).addTo(zeMarkers);
+								    zeMarkers.setGeoJSON($scope.maps[$routeParams.mapNo].geoJSON);
+				
+								    if(zeMarkers._geojson.length>0){
+								  		
+								  		$scope.map.trail = true;
+								    	$scope.trail.addLatLng([ latitude, longitude] );
+				
+								    }
+				
+								    $scope.savechanges();
+								});
 
 			},
 			removeMarkers :function(){
 				
-				console.log($scope.trail);
+				
 				$scope.trail._latlangs = [];
-				console.log($scope.trail);
-
-
-				$scope.map.geoJSON = [];
 				
-				zeMap.removeLayer(zeMarkers);
+
+
+				 $scope.maps[$routeParams.mapNo].geoJSON = [];
+				
+				zeMarkers.setGeoJSON($scope.maps[$routeParams.mapNo].geoJSON);
 				zeMap.removeLayer($scope.trail);
-				zeMarkers = L.mapbox.featureLayer().addTo(zeMap);
 				
-				zeLines = L.mapbox.featureLayer().addTo(zeMap);
+				
+				
 				
 				$scope.drawline();
 
@@ -202,6 +205,23 @@ mapsControllers.controller('SinglePhoneCtrl', ['$scope', '$routeParams', '$http'
 				$scope.savechanges();
 
 				
+			},
+			stepBack:function(){
+
+				var geo = $scope.map.geoJSON;
+				console.log(geo[(geo.length-1)]);
+				geo.pop(geo.length-1);
+
+				zeMarkers.setGeoJSON(geo);
+				zeMap.removeLayer($scope.trail);
+				zeLines = L.mapbox.featureLayer().addTo(zeMap);
+
+				$scope.drawline();
+				$scope.savechanges();
+				
+
+
+
 			},
  
 

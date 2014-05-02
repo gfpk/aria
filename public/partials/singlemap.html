@@ -16,11 +16,25 @@
 
 		        <button class="btn btn-success" type="button" title="add marker" ng-click="mapEditor.addMarker()"><span class="glyphicon glyphicon-map-marker"></span> Create trail</button>
 		        <button class="btn btn-danger" type="button" title="add marker" ng-click="mapEditor.removeMarkers();"><span class="glyphicon glyphicon-map-marker"></span> Remove trail</button>
+		        <button class="btn btn-info" type="button" title="add marker" ng-click="mapEditor.stepBack();"><span class="glyphicon glyphicon-map-marker"></span> step back</button>
+		        <button class="btn btn-info" type="button" title="add marker" ng-click="mapEditor.addMarker.active=false;"><span class="glyphicon glyphicon-map-marker"></span> done editing</button>
 		       <p>
+		       	{{markerOptions.properties}}
 		      </p>
 		  
 	
+<div id="markeropt">
+	<p>Colour:</p>
+	<p id="colors">
+		<span style="background-color:#0F86BD" ng-click="markerOptions.properties.color='0F86BD'"></span>
+		<span style="background-color:#f86767"  ng-click="markerOptions.properties.color='f86767'"></span>
+		<span style="background-color:#f5c272" ng-click="markerOptions.properties.color='f5c272'"></span>
+		<span style="background-color:#ffffff" ng-click="markerOptions.properties.color='ffffff'"></span>
+		<span style="background-color:#a3e46b" ng-click="markerOptions.properties.color='a3e46b'"></span>
+	</p>
 
+
+</div?
 
 
 
