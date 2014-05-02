@@ -2,7 +2,7 @@
 [
 	{
         "theme": "theme3",
-        "title": "Weekly Distance Chart Theme 3 Dognut type chart",
+        "title": "Weekly Distance Chart Doughnut chart",
         "text": "My Weekly - Km Running Record",
         "data": 
         [              
@@ -28,13 +28,13 @@
           	{
 		      "type": "pie",
 		      "dataPoints": [
-		      { "label": "Monday", "y": 10 },
-		      { "label": "Tuesday", "y": 15 },
-		      { "label": "Wednesday", "y": 25 },
-		      { "label": "Thursday", "y": 30 },
-		      { "label": "Friday", "y": 30 },
-		      { "label": "Saturday", "y": 35 },
-		      { "label": "Sunday", "y": 20 }]
+		      { "label": "Monday", "y": 1 },
+		      { "label": "Tuesday", "y": 5 },
+		      { "label": "Wednesday", "y": 2 },
+		      { "label": "Thursday", "y": 3 },
+		      { "label": "Friday", "y": 3.5 },
+		      { "label": "Saturday", "y": 5 },
+		      { "label": "Sunday", "y": 2 }]
     		}
    		]
    	},
@@ -47,13 +47,13 @@
           	{
 		      "type": "bar",
 		      "dataPoints": [
-		      { "label": "Monday", "y": 10 },
-		      { "label": "Tuesday", "y": 15 },
-		      { "label": "Wednesday", "y": 25 },
-		      { "label": "Thursday", "y": 30 },
-		      { "label": "Friday", "y": 30 },
-		      { "label": "Saturday", "y": 35 },
-		      { "label": "Sunday", "y": 20 }]
+		      { "label": "Monday", "y": 1 },
+		      { "label": "Tuesday", "y": 1.5 },
+		      { "label": "Wednesday", "y": 2.5 },
+		      { "label": "Thursday", "y": 3.0 },
+		      { "label": "Friday", "y": 3.5 },
+		      { "label": "Saturday", "y": 0.5 },
+		      { "label": "Sunday", "y": 2.0 }]
     		}
    		]
    	}
