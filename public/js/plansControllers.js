@@ -38,6 +38,19 @@ plansControllers.controller('PlanController', ['$scope','$http',
 			localstorage.set(storagekey, $scope.plan);
 			
 		};
+		$scope.docanvas = function(){
+
+			html2canvas($("#itemlist"), {
+			  onrendered: function(canvas) {
+			    $("#stupid").html(canvas);
+			    $("#stupid canvas").css("max-width","100%");
+			    console.log( canvas.toDataURL())
+			    $("#downloadimg").attr("href", (canvas.toDataURL()) );
+			    $("#downloadimg").attr("download", ($scope.plan.name) );
+
+			  }
+			});
+		}
 
 		$scope.remove=function(item){ 
 			var ind=$scope.plan.planitems.indexOf(item)

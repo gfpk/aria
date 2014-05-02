@@ -19,9 +19,28 @@
     <script type="text/javascript" src="js/plansControllers.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.6.0/ui-bootstrap-tpls.min.js"></script>
     <script type="text/javascript" src="js/vendor/html2canvas.js"></script>
+    
    	
 </head>
 <body class="cbp-spmenu-push main" ng-controller="PlanController">
+    <div class="modal fade " id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myModalLabel">{{ plan.name || 'empty' }}</h4>
+          </div>
+          <div class="modal-body" id="stupid">
+            
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        
+            <a href="" target="_blank" class="btn btn-primary" id="downloadimg" download=""><span class="glyphicon glyphicon-download-alt " title="{{ plan.name}}"></span> Download this image<a/>
+          </div>
+        </div>
+      </div>
+    </div>
     <!--offCanvasMenu-->
 	<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left " id="cbp-spmenu-s1">
         <h3><a id="brand" href="/">FitApp</a><a id="showLeftPush" class="btn btn-large pull-right"><spam class="glyphicon glyphicon-th-list"></spam></a></h3>
@@ -47,8 +66,16 @@
   	<div class="bigpage" >
         <div class="qa-message-list" id="wallmessages" >
         <hgroup>
-        	<h2><a href="#" editable-text="plan.name" onaftersave='savechanges()'>{{ plan.name || 'empty' }}</a></h2>
+        	<h2><a href="#" editable-text="plan.name" onaftersave='savechanges()'>{{ plan.name || 'empty' }}</a>
+                <button class="btn btn-primary pull-right" data-toggle="modal" data-target="#myModal" ng-click="docanvas();">
+                  Download Plan
+                </button>
+
+            
+
+            </h2>
         	<h4>by {{plan.author}}</h4>
+
         	<hr>
         </hgroup>
         <div id="itemlist">

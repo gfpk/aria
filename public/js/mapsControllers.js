@@ -86,9 +86,8 @@ mapsControllers.controller('SinglePhoneCtrl', ['$scope', '$routeParams', '$http'
 		//variables
 		$scope.maps=[];
 		$scope.map ={};
-		$scope.title=null;
-		$scope.color = null;
-		$scope.desc = null;
+		$scope.map = null;
+		
 
 		
 
@@ -148,13 +147,7 @@ mapsControllers.controller('SinglePhoneCtrl', ['$scope', '$routeParams', '$http'
 		};
 		
 		
-		$scope.markerOptions = {
-
-			properties:{
-				"marker-color": $scope.color,
-
-			}
-		};
+		
 
 		$scope.mapEditor = {
 			addMarker:function(){
@@ -175,8 +168,13 @@ mapsControllers.controller('SinglePhoneCtrl', ['$scope', '$routeParams', '$http'
 											    "coordinates": [longitude, latitude]
 											  }			
 											};
-									newmarker.properties = $scope.markerOptions.properties;
-									
+									newmarker.properties={
+											"marker-color": $scope.color,
+											"title": $scope.title,
+											"description": $scope.desc
+
+										};
+									console.log(newmarker);
 								    $scope.maps[$routeParams.mapNo].geoJSON.push(newmarker);
 								    //L.marker([ latitude, longitude]).addTo(zeMarkers);
 								    zeMarkers.setGeoJSON($scope.maps[$routeParams.mapNo].geoJSON);
@@ -217,6 +215,22 @@ mapsControllers.controller('SinglePhoneCtrl', ['$scope', '$routeParams', '$http'
 
 
 				$scope.savechanges();
+
+				
+			},
+			tour :function(){
+				
+				var arr = zeMarkers._geojson;
+				console.log(arr); 
+				
+				var i = 0;
+			    function run() {
+			        if (++i > arr.length - 1) i = 0;
+			        console.log(arr[i].geometry.coordinates);
+			        zeMap.setView([arr[i].geometry.coordinates[1],arr[i].geometry.coordinates[0]], 16);
+			        window.setTimeout(run, 3000);
+			    }
+			    run();
 
 				
 			},

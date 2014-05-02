@@ -49,23 +49,6 @@ var localstorage = {
     }
   });
 
-  FB.getLoginStatus(function(response) {
-  if (response.status === 'connected') {
-      var uid = response.authResponse.userID;
-      var accessToken = response.authResponse.accessToken;
-    } else if (response.status === 'not_authorized') {
-      alert('feck off')
-    } else {
-      if(!(window.location.href == ("http://" + window.location.host +"/"))){
-        console.log(("http://" + window.location.host +"/"));
-        console.log(window.location.href);
-       // alert("adfgadfg");
-
-        window.location.replace(("http://" + window.location.host +"/"));
-
-      };
-    }
-  });
 };
 
 
