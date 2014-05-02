@@ -60,9 +60,14 @@ mapsControllers.controller('MapListCtrl', ['$scope', '$http','$timeout',
 						var feature = mapData.geoJSON
 
 						zeLayer.setGeoJSON(feature);
-						zeLayer.on('ready', function() {
-						zeMap.fitBounds(featureLayer.getBounds());
-						});
+						
+						
+							zeLayer.eachLayer(function(m) {
+  m.openPopup();
+});
+
+						
+						
 		       			
 		        	};
 
@@ -81,6 +86,9 @@ mapsControllers.controller('SinglePhoneCtrl', ['$scope', '$routeParams', '$http'
 		//variables
 		$scope.maps=[];
 		$scope.map ={};
+		$scope.title=null;
+		$scope.color = null;
+		$scope.desc = null;
 
 		
 
@@ -118,7 +126,7 @@ mapsControllers.controller('SinglePhoneCtrl', ['$scope', '$routeParams', '$http'
 
         			points.push(val);
         		}
-        		//console.log(points);
+        	
         		var zeLines = L.mapbox.featureLayer().addTo(zeMap);
         		$scope.trail = L.polyline(points).addTo(zeLines);
 
@@ -139,11 +147,12 @@ mapsControllers.controller('SinglePhoneCtrl', ['$scope', '$routeParams', '$http'
         	}
 		};
 		
-
+		
 		$scope.markerOptions = {
 
 			properties:{
-				color:"f00",
+				"marker-color": $scope.color,
+
 			}
 		};
 
@@ -157,18 +166,17 @@ mapsControllers.controller('SinglePhoneCtrl', ['$scope', '$routeParams', '$http'
 								zeMap.on('click', function(e) {							
 								    var latitude = e.latlng.lat;
 								    var longitude = e.latlng.lng;
-								    console.log($scope.markerOptions.properties);
+								    
 								    var newmarker = {
 										  "type": "Feature",
+
 										  "geometry": {
 											    "type": "Point",
 											    "coordinates": [longitude, latitude]
 											  }			
 											};
-									newmarker.properties ={
-										"marker-color":$scope.markerOptions.properties.color,
-									};
-									console.log(newmarker);
+									newmarker.properties = $scope.markerOptions.properties;
+									
 								    $scope.maps[$routeParams.mapNo].geoJSON.push(newmarker);
 								    //L.marker([ latitude, longitude]).addTo(zeMarkers);
 								    zeMarkers.setGeoJSON($scope.maps[$routeParams.mapNo].geoJSON);
@@ -179,6 +187,12 @@ mapsControllers.controller('SinglePhoneCtrl', ['$scope', '$routeParams', '$http'
 								    	$scope.trail.addLatLng([ latitude, longitude] );
 				
 								    }
+
+							zeMarkers.eachLayer(function(m) {
+							  m.openPopup();
+							});
+
+
 				
 								    $scope.savechanges();
 								});
@@ -223,7 +237,10 @@ mapsControllers.controller('SinglePhoneCtrl', ['$scope', '$routeParams', '$http'
 
 
 			},
- 
+
+
+
+			
 
 
 
@@ -231,6 +248,7 @@ mapsControllers.controller('SinglePhoneCtrl', ['$scope', '$routeParams', '$http'
 
 
 		};
+
 
 		
 		

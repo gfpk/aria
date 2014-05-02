@@ -13,13 +13,14 @@
 		  <div id="markers">
 		  	<p></p>
 		  	
-
+   <p>
 		        <button class="btn btn-success" type="button" title="add marker" ng-click="mapEditor.addMarker()"><span class="glyphicon glyphicon-map-marker"></span> Create trail</button>
 		        <button class="btn btn-danger" type="button" title="add marker" ng-click="mapEditor.removeMarkers();"><span class="glyphicon glyphicon-map-marker"></span> Remove trail</button>
 		        <button class="btn btn-info" type="button" title="add marker" ng-click="mapEditor.stepBack();"><span class="glyphicon glyphicon-map-marker"></span> step back</button>
-		        <button class="btn btn-info" type="button" title="add marker" ng-click="mapEditor.addMarker.active=false;"><span class="glyphicon glyphicon-map-marker"></span> done editing</button>
-		       <p>
-		       	{{markerOptions.properties}}
+		        
+		    
+		       &nbspMarker Title:<input ng-model="title">
+		       &nbspMarker Description:<input ng-model="desc">
 		      </p>
 		  
 	
