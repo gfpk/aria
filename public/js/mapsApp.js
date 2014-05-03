@@ -12,7 +12,7 @@ mapApp.config(['$routeProvider',
 		}).
 		when('/maps.html/:mapNo', {
 			templateUrl: 'partials/singlemap.html',
-			controller: 'SinglePhoneCtrl'
+			controller: 'SingleMapCtrl'
 		}).
 		otherwise({
 			redirectTo: '/maps.html'

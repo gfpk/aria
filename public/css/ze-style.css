@@ -96,24 +96,19 @@ body, html {
   opacity: 0;
 }
 
-#slider li:first-child
+#slider li:nth-child(2)
 {
   background: url('../img/bg.jpg');
   background-position: center;
   background-size:cover;
 }
-#slider li:nth-child(2)
+#slider li:nth-child(3)
 {
   background: url('../img/bg-2.jpg');
   background-position: center;
   background-size:cover;
 }
-#slider li:nth-child(3)
-{
-  background: #333;
-  background-position: center;
-  background-size:cover;
-}
+
 body.login-page{
   background: url('../img/bg.jpg');
   background-position: center;

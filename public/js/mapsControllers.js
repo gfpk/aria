@@ -24,7 +24,14 @@ var mapboxId = "gfpk.map-z6zqpvk6";
 
 mapsControllers.controller('MapListCtrl', ['$scope', '$http','$timeout',
 		function ($scope, $http, $timeout) {
-
+			$scope.mapx = [
+			    {'name': 'St.Anns Park',
+			     'snippet': 'Sample Park snippet'},
+			    {'name': 'Phoenix',
+			     'snippet': 'Sample Park snippet'},
+			    {'name': 'Malahide',
+			     'snippet': 'Sample Park snippet'}
+			  ];
 			$scope.maps=[];
 
 			if(localMapData){
@@ -80,7 +87,7 @@ mapsControllers.controller('MapListCtrl', ['$scope', '$http','$timeout',
 	
 }]);
 
-mapsControllers.controller('SinglePhoneCtrl', ['$scope', '$routeParams', '$http','$timeout',
+mapsControllers.controller('SingleMapCtrl', ['$scope', '$routeParams', '$http','$timeout',
 	function($scope, $routeParams, $http, $timeout) {
 
 		//variables
