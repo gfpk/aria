@@ -12,7 +12,7 @@ var localstorage = {
         }
     }
 };
-var	themeindex = 2;
+var themeindex = 0;
 var storagekey = 'fitStatData';
 var localStatData = localstorage.get(storagekey);
 var resourceURL = ("http://" + window.location.host+ "/json/stats.json");
@@ -34,10 +34,10 @@ statsControllers.controller('StatsController', ['$scope','$http',
 
 		};
 
-		$scope.renderstat = function(obj){
+		$scope.renderstat = function(obj, themeindex){
 
 			var chart = new CanvasJS.Chart(obj, {
-                theme: $scope.stats[themeindex].theme,
+                theme: themeindex,
                 title:{
                     text: $scope.stats[themeindex].text            
                 },
@@ -52,7 +52,7 @@ statsControllers.controller('StatsController', ['$scope','$http',
 
 		angular.element(document).ready(function () {
 		  
-		   $scope.renderstat("chartContainer1");
+		   $scope.renderstat("chartContainer1", 0);
 		    //console.log($scope.stats[0].text);
 		});
 		

@@ -2,27 +2,27 @@
 [
 	{
         "theme": "theme2",
-        "title": "Distance chart",
-        "text": "My Weekly - Km Running Record",
+        "title": "Excerise Statistics",
+        "text": "Daily Calorie Intake (kcal)",
         "data": 
         [              
-          	{
-		      "type": "doughnut",
-		      "dataPoints": [
-		      { "label": "Day 1", "y": 10 },
-		      { "label": "Day 2", "y": 15 },
-		      { "label": "Day 3", "y": 25 },
-		      { "label": "Day 4", "y": 30 },
-		      { "label": "Day 5", "y": 32 },
-		      { "label": "Day 6", "y": 35 },
-		      { "label": "Day 7", "y": 28 }]
-    		}
-   		]
-   	},
+            {
+          "type": "bar",
+          "dataPoints": [
+          { "label": "Monday", "y": 2000 },
+          { "label": "Tuesday", "y": 2150 },
+          { "label": "Wednesday", "y": 2500 },
+          { "label": "Thursday", "y": 3000 },
+          { "label": "Friday", "y": 3500 },
+          { "label": "Saturday", "y": 1750 },
+          { "label": "Sunday", "y": 2200 }]
+        }
+      ]
+    },
    	{
         "theme": "theme1",
-        "title": "Weekly Distance Chart Pie chart",
-        "text": "Weekly - Km Running Statistics",
+        "title": "Daily Distance Statistics",
+        "text": "Daily - Km Running Statistics",
         "data": 
         [              
           	{
@@ -38,23 +38,46 @@
     		}
    		]
    	},
-   	{
+    {
         "theme": "theme2",
-        "title": "Weekly Distance Bar Chart ",
-        "text": "Weekly - Km Running Statistics",
+        "title": "Weekly Distance Statistics",
+        "text": "My Weekly - Km Running Record",
         "data": 
         [              
-          	{
-		      "type": "bar",
-		      "dataPoints": [
-		      { "label": "Monday", "y": 1 },
-		      { "label": "Tuesday", "y": 1.5 },
-		      { "label": "Wednesday", "y": 2.5 },
-		      { "label": "Thursday", "y": 3.0 },
-		      { "label": "Friday", "y": 3.5 },
-		      { "label": "Saturday", "y": 0.5 },
-		      { "label": "Sunday", "y": 2.0 }]
-    		}
-   		]
-   	}
-]
+            {
+          "type": "doughnut",
+          "dataPoints": [
+          { "label": "Week 1", "y": 10 },
+          { "label": "Week 2", "y": 15 },
+          { "label": "Week 3", "y": 25 },
+          { "label": "Week 4", "y": 30 },
+          { "label": "Week 5", "y": 32 },
+          { "label": "Week 6", "y": 35 },
+          { "label": "Week 7", "y": 28 }]
+        }
+      ]
+    },
+    {
+        "theme": "theme1",
+        "title": "Monthly Distance Statistics",
+        "text": "Monthly - Km Totals",
+        "data": 
+        [              
+            {
+          "type": "area",
+          "dataPoints": [
+          { "label": "Jan", "y": 25 },
+          { "label": "Feb", "y": 15 },
+          { "label": "Mar", "y": 35 },
+          { "label": "Apr", "y": 30 },
+          { "label": "May", "y": 22 },
+          { "label": "Jun", "y": 35 },
+          { "label": "Jul", "y": 25 },
+          { "label": "Aub", "y": 45 },
+          { "label": "Sep", "y": 15 },
+          { "label": "Oct", "y": 25 },
+          { "label": "Nov", "y": 10 },
+          { "label": "Dec", "y": 18 }]
+        }
+      ]
+    }]
