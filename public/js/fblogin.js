@@ -29,7 +29,13 @@ var localstorage = {
 
     }
     else {
-       console.log('Logged nidhgsr in.');
+      console.log('Logged nidhgsr in.');
+      console.log(toString(location.href));
+      console.log("http://" + window.location.host);
+      console.log(window.location.origin == document.URL);
+      //if(!((document.url) == ("http://" + window.location.host +"/main.html "))
+      //window.location.replace(("http://" + window.location.host))
+
       FB.login();
     }
   });
@@ -87,6 +93,8 @@ var localstorage = {
       console.log(user);
     
      $("#username h2").text(user.name);
+      $("#hometown").text(user.hometown.name);
+      $("#loc").text(user.location.name);
 
     });
   };

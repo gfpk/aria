@@ -1,10 +1,20 @@
-describe('MapListCtrl', function(){
+describe('mapsApp controllers', function() {
 
-  it('should create "maplist" model with 4 maps', function() {
-    var scope = {},
-        ctrl = new MapListCtrl(scope);
+  describe('MapsControllers', function(){
+    var scope, ctrl;
 
-    expect(scope.mapsx.length).toBe(3);
+    beforeEach(module('MapListCtrl'));
+
+    beforeEach(inject(function($controller) {
+      scope = {};
+      ctrl = $controller('MapListCtrl', {$scope:scope});
+    }));
+
+    it('should create  model with 3 maps', function() {
+      expect(scope.phones.length).toBe(3);
+    });
+
+
+    
   });
-
 });
